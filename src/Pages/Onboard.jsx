@@ -11,6 +11,7 @@ import { ChevronRightIcon } from "lucide-react";
 import img1 from "../assets/Images/Slide(1).png";
 import img2 from "../assets/Images/Slide(2).png";
 import img3 from "../assets/Images/Slide(3).png";
+import { useNavigate } from "react-router";
 
 // Placeholder images (replace with your own)
 const destinations = [
@@ -38,6 +39,7 @@ const destinations = [
 ];
 
 const OnboardPage = () => {
+    const navigate = useNavigate(); 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Main Content Area (will grow to fill space) */}
@@ -92,8 +94,8 @@ const OnboardPage = () => {
       {/* Login Text (stays at bottom) */}
       <div className="py-4 bg-white border-t border-gray-200 text-center">
         <p className="text-sm text-gray-600">
-          Already have an account?{" "}
-          <span className="text-[#2563EB] font-medium">Login Here</span>
+          Already have an account?
+          <span onClick={() => navigate("/signup")} className="text-[#2563EB] font-medium">Login Here</span>
         </p>
       </div>
     </div>
