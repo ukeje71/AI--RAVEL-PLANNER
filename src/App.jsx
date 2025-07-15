@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import WelcomePage from "./Pages/Welcomepage";
+import WelcomePage from "./Pages/WelcomePage";
 import OnboardPage from "./Pages/Onboard";
 
 function App() {
