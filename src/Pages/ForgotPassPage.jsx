@@ -80,7 +80,7 @@ const ForgotPasswordPage = () => {
           {/* Back to Login */}
           <div className="mt-6 text-center">
             <button
-              onClick={() => navigate('/login')}
+              onClick={() => navigate('/signin')}
               className="text-sm font-medium text-[#2563EB] hover:text-blue-700 hover:underline"
             >
               Back to login

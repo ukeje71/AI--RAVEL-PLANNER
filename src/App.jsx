@@ -5,6 +5,7 @@ import SignupPage from "./Pages/SignupPage";
 import SigninPage from "./Pages/SigninPage";
 import ForgotPasswordPage from "./Pages/ForgotPassPage";
 import PasswordRecoveryPage from "./Pages/CheckemailPage";
+import Homescreen from "./Pages/Homescreen";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="signin" element={<SigninPage />} />
           <Route path="forgot-password" element={<ForgotPasswordPage />} />
           <Route path="check-email" element={<PasswordRecoveryPage />} />
+          <Route path="home" element={<Homescreen />} />
 
         </Routes>
       </div>
