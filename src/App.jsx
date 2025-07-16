@@ -3,6 +3,7 @@ import WelcomePage from "./Pages/WelcomePage";
 import OnboardPage from "./Pages/Onboard";
 import SignupPage from "./Pages/SignupPage";
 import SigninPage from "./Pages/SigninPage";
+import ForgotPasswordPage from "./Pages/ForgotPassPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="onboard" element={<OnboardPage />} />
           <Route path="signup" element={<SignupPage />} />
           <Route path="signin" element={<SigninPage />} />
+          <Route path="forgot-password" element={<ForgotPasswordPage />} />
 
         </Routes>
       </div>
