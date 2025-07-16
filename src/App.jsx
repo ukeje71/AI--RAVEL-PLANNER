@@ -4,6 +4,7 @@ import OnboardPage from "./Pages/Onboard";
 import SignupPage from "./Pages/SignupPage";
 import SigninPage from "./Pages/SigninPage";
 import ForgotPasswordPage from "./Pages/ForgotPassPage";
+import PasswordRecoveryPage from "./Pages/CheckemailPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="signup" element={<SignupPage />} />
           <Route path="signin" element={<SigninPage />} />
           <Route path="forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="check-email" element={<PasswordRecoveryPage />} />
 
         </Routes>
       </div>
