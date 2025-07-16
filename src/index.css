@@ -1,6 +1,10 @@
 @import "tailwindcss";
-body{
-   font-family: "Poppins", sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: Regular;
+}
+button,
+input {
+  outline: none;
 }

@@ -41,7 +41,7 @@ const destinations = [
 const OnboardPage = () => {
     const navigate = useNavigate(); 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-[100vh] flex flex-col bg-gray-50 overflow-hidden">
       {/* Main Content Area (will grow to fill space) */}
       <div className="flex-1 py-12 px-4">
         <h2 className="text-sm font-bold text-right text-[#2563EB] mb-20">
@@ -85,17 +85,19 @@ const OnboardPage = () => {
           ))}
         </Swiper>
 
-        <button className="mt-10 flex flex-row justify-center text-center bg-gradient-to-r from-[#2563EB] to-[#5182EF] w-full text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition">
+        <button
+        onClick={()=>navigate("/signup")}
+        className="mt-10 flex flex-row justify-center text-center bg-gradient-to-r from-[#2563EB] to-[#5182EF] w-full text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition">
           <p className="mr-2">Next</p>
           <ChevronRightIcon />
         </button>
       </div>
 
       {/* Login Text (stays at bottom) */}
-      <div className="py-4 bg-white border-t border-gray-200 text-center">
+      <div className="py-4 bg-white border-t justify-center border-gray-200 text-center flex flex-row gap-3">
         <p className="text-sm text-gray-600">
           Already have an account?
-          <span onClick={() => navigate("/signup")} className="text-[#2563EB] font-medium">Login Here</span>
+          <span onClick={() => navigate("/signup")} className="text-[#2563EB] cursor-pointer font-medium">Login Here</span>
         </p>
       </div>
     </div>

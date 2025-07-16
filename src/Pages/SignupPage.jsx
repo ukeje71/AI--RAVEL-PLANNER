@@ -1,28 +1,50 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { Eye, EyeOff, Lock } from "lucide-react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 const SignupPage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    fullName: '',
-    travelBudget: '',
-    country: '',
-    email: '',
-    phone: '',
-    password: '',
-    confirmPassword: '',
+    fullName: "",
+    travelBudget: "",
+    country: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
   });
   const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    
+    // Clear password error when user types
+    if (name === "password" || name === "confirmPassword") {
+      setPasswordError("");
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Validate passwords match
+    if (formData.password !== formData.confirmPassword) {
+      setPasswordError("Passwords do not match");
+      return;
+    }
+    
+    if (formData.password.length < 8) {
+      setPasswordError("Password must be at least 8 characters");
+      return;
+    }
+
     // Add your signup logic here
-    navigate('/onboard'); // Redirect after signup
+    console.log("Form submitted:", formData);
+    // navigate("/onboard");
   };
 
   return (
@@ -129,15 +151,26 @@ const SignupPage = () => {
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                 Password
               </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                required
-                value={formData.password}
-                onChange={handleChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#2563EB] focus:border-[#2563EB]"
-              />
+              <div className="mt-1 flex items-center border border-gray-300 rounded-lg p-3 focus-within:ring-2 focus-within:ring-[#008f96] focus-within:border-transparent transition-all">
+                <Lock className="text-gray-500 w-5 h-5" />
+                <input
+                  required
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  placeholder="••••••••"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="ml-3 outline-none w-full bg-transparent text-gray-800 placeholder-gray-400"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="ml-3 text-gray-500 hover:text-gray-700"
+                >
+                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
+              </div>
             </div>
 
             {/* Confirm Password */}
@@ -145,15 +178,29 @@ const SignupPage = () => {
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
                 Confirm Password
               </label>
-              <input
-                id="confirmPassword"
-                name="confirmPassword"
-                type="password"
-                required
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#2563EB] focus:border-[#2563EB]"
-              />
+              <div className="mt-1 flex items-center border border-gray-300 rounded-lg p-3 focus-within:ring-2 focus-within:ring-[#008f96] focus-within:border-transparent transition-all">
+                <Lock className="text-gray-500 w-5 h-5" />
+                <input
+                  required
+                  name="confirmPassword"
+                  type={showConfirmPassword ? "text" : "password"}
+                  id="confirmPassword"
+                  placeholder="••••••••"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  className="ml-3 outline-none w-full bg-transparent text-gray-800 placeholder-gray-400"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  className="ml-3 text-gray-500 hover:text-gray-700"
+                >
+                  {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
+              </div>
+              {passwordError && (
+                <p className="mt-1 text-sm text-red-600">{passwordError}</p>
+              )}
             </div>
 
             {/* Terms Checkbox */}
@@ -167,7 +214,10 @@ const SignupPage = () => {
                 className="h-4 w-4 text-[#2563EB] focus:ring-[#2563EB] border-gray-300 rounded"
               />
               <label htmlFor="agreeToTerms" className="ml-2 block text-sm text-gray-700">
-                I agree to the <a href="#" className="text-[#2563EB] hover:underline">Terms and Conditions</a>
+                I agree to the{" "}
+                <a href="#" className="text-[#2563EB] hover:underline">
+                  Terms and Conditions
+                </a>
               </label>
             </div>
 
@@ -175,11 +225,22 @@ const SignupPage = () => {
             <div>
               <button
                 type="submit"
-                disabled={!agreeToTerms}
-                className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${agreeToTerms ? 'bg-[#2563EB] hover:bg-blue-700' : 'bg-gray-400 cursor-not-allowed'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB] transition-colors`}
+                disabled={!agreeToTerms || passwordError}
+                className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
+                  agreeToTerms && !passwordError
+                    ? "bg-[#2563EB] hover:bg-blue-700"
+                    : "bg-gray-400 cursor-not-allowed"
+                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB] transition-colors`}
               >
                 Sign Up
               </button>
+            </div>
+
+            <div className="flex flex-row gap-3">
+              <p>Already have an account?</p>
+              <p onClick={() => navigate("/signin")} className="text-[#2563EB] cursor-pointer">
+                Login
+              </p>
             </div>
           </form>
         </div>
