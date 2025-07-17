@@ -21,7 +21,7 @@ const SignupPage = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    
+
     // Clear password error when user types
     if (name === "password" || name === "confirmPassword") {
       setPasswordError("");
@@ -30,13 +30,13 @@ const SignupPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Validate passwords match
     if (formData.password !== formData.confirmPassword) {
       setPasswordError("Passwords do not match");
       return;
     }
-    
+
     if (formData.password.length < 8) {
       setPasswordError("Password must be at least 8 characters");
       return;
@@ -63,7 +63,10 @@ const SignupPage = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Full Name */}
             <div>
-              <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="fullName"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Full Name
               </label>
               <input
@@ -79,7 +82,10 @@ const SignupPage = () => {
 
             {/* Travel Budget */}
             <div>
-              <label htmlFor="travelBudget" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="travelBudget"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Travel Budget
               </label>
               <select
@@ -99,7 +105,10 @@ const SignupPage = () => {
 
             {/* Country */}
             <div>
-              <label htmlFor="country" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="country"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Country
               </label>
               <input
@@ -115,7 +124,10 @@ const SignupPage = () => {
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email Address
               </label>
               <input
@@ -132,7 +144,10 @@ const SignupPage = () => {
 
             {/* Phone */}
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Phone Number
               </label>
               <input
@@ -148,10 +163,13 @@ const SignupPage = () => {
 
             {/* Password */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Password
               </label>
-              <div className="mt-1 flex items-center border border-gray-300 rounded-lg p-3 focus-within:ring-2 focus-within:ring-[#008f96] focus-within:border-transparent transition-all">
+              <div className="mt-1 flex items-center border border-gray-300 rounded-md shadow-sm py-2 px-3 focus-within:ring-1 focus-within:ring-[#2563EB] focus-within:border-[#2563EB]">
                 <Lock className="text-gray-500 w-5 h-5" />
                 <input
                   required
@@ -168,17 +186,24 @@ const SignupPage = () => {
                   onClick={() => setShowPassword(!showPassword)}
                   className="ml-3 text-gray-500 hover:text-gray-700"
                 >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  {showPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
                 </button>
               </div>
             </div>
 
             {/* Confirm Password */}
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="confirmPassword"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Confirm Password
               </label>
-              <div className="mt-1 flex items-center border border-gray-300 rounded-lg p-3 focus-within:ring-2 focus-within:ring-[#008f96] focus-within:border-transparent transition-all">
+              <div className="mt-1 flex items-center border border-gray-300 rounded-md shadow-sm py-2 px-3 focus-within:ring-1 focus-within:ring-[#2563EB] focus-within:border-[#2563EB]">
                 <Lock className="text-gray-500 w-5 h-5" />
                 <input
                   required
@@ -195,7 +220,11 @@ const SignupPage = () => {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   className="ml-3 text-gray-500 hover:text-gray-700"
                 >
-                  {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  {showConfirmPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
                 </button>
               </div>
               {passwordError && (
@@ -213,7 +242,10 @@ const SignupPage = () => {
                 onChange={(e) => setAgreeToTerms(e.target.checked)}
                 className="h-4 w-4 text-[#2563EB] focus:ring-[#2563EB] border-gray-300 rounded"
               />
-              <label htmlFor="agreeToTerms" className="ml-2 block text-sm text-gray-700">
+              <label
+                htmlFor="agreeToTerms"
+                className="ml-2 block text-sm text-gray-700"
+              >
                 I agree to the{" "}
                 <a href="#" className="text-[#2563EB] hover:underline">
                   Terms and Conditions
@@ -238,7 +270,10 @@ const SignupPage = () => {
 
             <div className="flex flex-row gap-3">
               <p>Already have an account?</p>
-              <p onClick={() => navigate("/signin")} className="text-[#2563EB] cursor-pointer">
+              <p
+                onClick={() => navigate("/signin")}
+                className="text-[#2563EB] cursor-pointer"
+              >
                 Login
               </p>
             </div>
