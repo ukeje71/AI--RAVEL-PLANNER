@@ -7,7 +7,7 @@ const Card = ({ imageUrl, title, location, price, rating, className = "" }) => {
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-48 object-cover rounded-xl"
+          className="w-full h-[153px]  object-cover rounded-xl"
         />
         <p className="absolute bottom-2 left-2 bg-[#2563EBCC] bg-opacity-70 text-white font-bold px-2 py-1 rounded-md">
           {price}

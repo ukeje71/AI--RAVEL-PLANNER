@@ -12,10 +12,9 @@ import Emirate3 from "../assets/Images/Emirate3.jpg";
 import Emirate4 from "../assets/Images/Emirate4.jpg";
 import Emirate5 from "../assets/Images/Emirate5.jpg";
 import Emirate6 from "../assets/Images/Emirate6.jpg";
-//Tour places 
+//Tour places
 import Tour1 from "../assets/Images/Conservation1.jpg";
 import Tour2 from "../assets/Images/Conservation2.jpg";
-
 
 export const Products = [
   // APARTMENTS DATA
@@ -54,8 +53,8 @@ export const Products = [
     Price: 200,
     TimeFrame: "For 1 night - 18 June-20",
     category: "apartment",
-    location: "Victoria Island",
-    rating: 4.8,
+    location: "Abuja, Nigeria",
+    rating: 5.2,
   },
   {
     id: 3,
@@ -171,8 +170,8 @@ export const Products = [
     Price: 2500,
     TimeFrame: "Departure: 15 June 2023 • Return: 22 June 2023",
     category: "airline",
-    location: "Dubai International Airport",
-    rating: 4.9,
+    location: "Air Nigeria",
+    rating: 2.2,
   },
   {
     id: 2,
@@ -190,8 +189,8 @@ export const Products = [
     Price: 850,
     TimeFrame: "Departure: 10 July 2023 • Return: 25 July 2023",
     category: "airline",
-    location: "Murtala Muhammed International Airport",
-    rating: 4.5,
+    location: "Emirates",
+    rating: 4.2,
   },
   {
     id: 3,
@@ -224,7 +223,7 @@ export const Products = [
     Medium3: "Route Information",
     Text3:
       "Direct flight from Lagos to Johannesburg with a flight time of 5 hours 30 minutes.",
-    image:Emirate4,
+    image: Emirate4,
     Price: 750,
     TimeFrame: "Departure: 8 November 2023 • Return: 22 November 2023",
     category: "airline",
@@ -327,7 +326,7 @@ export const Products = [
     Price: 450,
     TimeFrame: "3 days/2 nights package • Available year-round",
     category: "tour",
-    location: "Obudu, Cross River",
+    location: "Obudu, Ranch",
     rating: 4.9,
   },
   {
@@ -350,7 +349,7 @@ export const Products = [
     rating: 4.5,
   },
   {
-    id:4,
+    id: 4,
     title: "Yankari Game Safari Experience",
     medium1: "Wildlife Adventure",
     Text1:
