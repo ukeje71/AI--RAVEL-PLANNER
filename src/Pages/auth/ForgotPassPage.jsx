@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Mail, ArrowRight } from 'lucide-react';
-import Whisk from  "../assets/Images/Whisk.png"; 
+import Whisk from  "../../assets/Images/Whisk.png"; 
 const ForgotPasswordPage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');

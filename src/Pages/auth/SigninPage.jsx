@@ -10,7 +10,7 @@ import {
 
 } from "lucide-react";
 // Image import 
-import Gmail from "../assets/Images/Gmail.png"
+import Gmail from "../../assets/Images/Gmail.png"
 const SigninPage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
