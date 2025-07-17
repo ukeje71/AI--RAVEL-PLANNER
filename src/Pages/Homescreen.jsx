@@ -10,8 +10,10 @@ import {
   MapPin,
 } from "lucide-react";
 // images
-import img1 from "../assets/Images/Plane.png";
-import img2 from "../assets/Images/Rectangle1.png";
+import img1 from "../assets/Images/Plane(1).png";
+import img2 from "../assets/Images/Sittings.png";
+import img3 from "../assets/Images/Plane(2).png";
+
 
 const Homescreen = () => {
   return (
@@ -50,7 +52,7 @@ const Homescreen = () => {
           <ChevronRight className="text-gray-500" />
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-2">
           {/* Apartment Card 1 */}
           <div className="relative rounded-lg p-2 w-full">
             <div className="relative">
@@ -66,10 +68,12 @@ const Homescreen = () => {
             <div className="flex items-center mt-2 justify-between">
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 text-gray-500 mr-1" />
-                <span className="font-medium text-xs sm:text-sm">Victoria Island</span>
+                <span className="font-medium text-xs sm:text-sm">
+                  Victoria Island
+                </span>
               </div>
               <div className="flex items-center">
-                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-yellow-400" />
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-[#C27C1A]" />
                 <span className="text-xs sm:text-sm ml-1">4.8K</span>
               </div>
             </div>
@@ -83,17 +87,16 @@ const Homescreen = () => {
                 alt="Kubwa, Abuja apartment"
                 className="w-full h-48 object-cover rounded-xl"
               />
-              <p className="absolute bottom-2 left-2 bg-[#2563EBCC] bg-opacity-70 text-white font-bold px-2 py-1 rounded-md">
-                $290 per night
-              </p>
             </div>
             <div className="flex items-center mt-2 justify-between">
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 text-gray-500 mr-1" />
-                <span className="font-medium text-xs sm:text-sm">Kubwa, Abuja</span>
+                <span className="font-medium text-xs sm:text-sm">
+                  Kubwa, Abuja
+                </span>
               </div>
               <div className="flex items-center">
-                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-yellow-400" />
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-[#C27C1A]" />
                 <span className="text-xs sm:text-sm ml-1">5.2K</span>
               </div>
             </div>
@@ -103,27 +106,55 @@ const Homescreen = () => {
 
       {/* Airlines Section */}
       <div className="mb-10">
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex gap-4 items-center mb-4">
           <h2 className="text-xl font-semibold">Airlines</h2>
           <ChevronRight className="text-gray-500" />
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-3 grid grid-cols-2">
           {/* Airline 1 */}
-          <div className="flex justify-between items-center p-3 border rounded-lg">
-            <span className="font-medium">Air Nigeria</span>
-            <div className="flex items-center">
-              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-              <span className="text-sm ml-1">4.2K</span>
+          <div className="relative rounded-lg p-2 w-full">
+            <div className="relative">
+              <img
+                src={img1}
+                alt="Kubwa, Abuja apartment"
+                className="w-full h-48 object-cover rounded-xl"
+              />
+            </div>
+            <div className="flex items-center mt-2 justify-between">
+              <div className="flex items-center">
+                <MapPin className="w-4 h-4 text-gray-500 mr-1" />
+                <span className="font-medium text-xs sm:text-sm">
+                  Air, Nigeria
+                </span>
+              </div>
+              <div className="flex items-center">
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-[#C27C1A]" />
+                <span className="text-xs sm:text-sm ml-1">5.2K</span>
+              </div>
             </div>
           </div>
 
           {/* Airline 2 */}
-          <div className="flex justify-between items-center p-3 border rounded-lg">
-            <span className="font-medium">Emirates</span>
-            <div className="flex items-center">
-              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-              <span className="text-sm ml-1">2.2K</span>
+          <div className="relative rounded-lg p-2 w-full">
+            <div className="relative">
+              <img
+                src={img3}
+                alt="Kubwa, Abuja apartment"
+                className="w-full h-48 object-cover rounded-xl"
+              />
+            </div>
+            <div className="flex items-center mt-2 justify-between">
+              <div className="flex items-center">
+                <MapPin className="w-4 h-4 text-gray-500 mr-1" />
+                <span className="font-medium text-xs sm:text-sm">
+                  Emirates
+                </span>
+              </div>
+              <div className="flex items-center">
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-[#C27C1A]" />
+                <span className="text-xs sm:text-sm ml-1">2.2K</span>
+              </div>
             </div>
           </div>
         </div>
@@ -138,13 +169,49 @@ const Homescreen = () => {
 
         <div className="grid grid-cols-2 gap-4">
           {/* Place Card 1 */}
-          <div className="border rounded-lg p-4">
-            <div className="bg-gray-200 h-40 rounded-md"></div>
+          <div className="relative rounded-lg p-2 w-full">
+            <div className="relative">
+              <img
+                src={img1}
+                alt="Kubwa, Abuja apartment"
+                className="w-full h-48 object-cover rounded-xl"
+              />
+            </div>
+            <div className="flex items-center mt-2 justify-between">
+              <div className="flex items-center">
+                <MapPin className="w-4 h-4 text-gray-500 mr-1" />
+                <span className="font-medium text-xs sm:text-sm">
+                  Air, Nigeria
+                </span>
+              </div>
+              <div className="flex items-center">
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-[#C27C1A]" />
+                <span className="text-xs sm:text-sm ml-1">5.2K</span>
+              </div>
+            </div>
           </div>
 
           {/* Place Card 2 */}
-          <div className="border rounded-lg p-4">
-            <div className="bg-gray-200 h-40 rounded-md"></div>
+         <div className="relative rounded-lg p-2 w-full">
+            <div className="relative">
+              <img
+                src={img1}
+                alt="Kubwa, Abuja apartment"
+                className="w-full h-48 object-cover rounded-xl"
+              />
+            </div>
+            <div className="flex items-center mt-2 justify-between">
+              <div className="flex items-center">
+                <MapPin className="w-4 h-4 text-gray-500 mr-1" />
+                <span className="font-medium text-xs sm:text-sm">
+                  Air, Nigeria
+                </span>
+              </div>
+              <div className="flex items-center">
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-[#C27C1A]" />
+                <span className="text-xs sm:text-sm ml-1">5.2K</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

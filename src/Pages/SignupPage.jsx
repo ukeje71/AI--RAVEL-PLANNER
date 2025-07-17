@@ -44,7 +44,7 @@ const SignupPage = () => {
 
     // Add your signup logic here
     console.log("Form submitted:", formData);
-    // navigate("/onboard");
+    navigate("/home");
   };
 
   return (
