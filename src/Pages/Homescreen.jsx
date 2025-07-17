@@ -11,8 +11,10 @@ import {
 } from "lucide-react";
 // images
 import img1 from "../assets/Images/Plane(1).png";
-import img2 from "../assets/Images/Sittings.png";
+import img2 from "../assets/Images/Resturant.png";
 import img3 from "../assets/Images/Plane(2).png";
+import img4 from "../assets/Images/Cloud.png";
+import BottomNavigation from "../components/BottomNavigation";
 
 
 const Homescreen = () => {
@@ -83,21 +85,24 @@ const Homescreen = () => {
           <div className="relative rounded-lg p-2 w-full">
             <div className="relative">
               <img
-                src={img2}
-                alt="Kubwa, Abuja apartment"
+                src={img1}
+                alt="Victoria Island apartment"
                 className="w-full h-48 object-cover rounded-xl"
               />
+              <p className="absolute bottom-2 left-2 bg-[#2563EBCC] bg-opacity-70 text-white font-bold px-2 py-1 rounded-md">
+                $200 per night
+              </p>
             </div>
             <div className="flex items-center mt-2 justify-between">
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 text-gray-500 mr-1" />
                 <span className="font-medium text-xs sm:text-sm">
-                  Kubwa, Abuja
+                  Victoria Island
                 </span>
               </div>
               <div className="flex items-center">
                 <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-[#C27C1A]" />
-                <span className="text-xs sm:text-sm ml-1">5.2K</span>
+                <span className="text-xs sm:text-sm ml-1">4.8K</span>
               </div>
             </div>
           </div>
@@ -162,7 +167,7 @@ const Homescreen = () => {
 
       {/* Places to Tour Section */}
       <div>
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex gap-3 items-center mb-4">
           <h2 className="text-xl font-semibold">Places to Tour</h2>
           <ChevronRight className="text-gray-500" />
         </div>
@@ -172,7 +177,7 @@ const Homescreen = () => {
           <div className="relative rounded-lg p-2 w-full">
             <div className="relative">
               <img
-                src={img1}
+                src={img2}
                 alt="Kubwa, Abuja apartment"
                 className="w-full h-48 object-cover rounded-xl"
               />
@@ -195,7 +200,7 @@ const Homescreen = () => {
          <div className="relative rounded-lg p-2 w-full">
             <div className="relative">
               <img
-                src={img1}
+                src={img4}
                 alt="Kubwa, Abuja apartment"
                 className="w-full h-48 object-cover rounded-xl"
               />
@@ -215,6 +220,7 @@ const Homescreen = () => {
           </div>
         </div>
       </div>
+      <BottomNavigation/>
     </div>
   );
 };
