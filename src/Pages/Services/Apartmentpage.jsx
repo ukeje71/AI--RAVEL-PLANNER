@@ -41,7 +41,7 @@ const Apartmentpage = () => {
 
       {/* Apartments display */}
       <main className="px-4 py-6 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
           {apartments.map((apartment) => (
             <Card
               key={apartment.id}
@@ -50,7 +50,7 @@ const Apartmentpage = () => {
               location={apartment.location}
               rating={apartment.rating}
               TimeFrame={apartment.TimeFrame}
-              className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300"
+              className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow  duration-300"
             />
           ))}
         </div>

@@ -7,7 +7,7 @@ import ForgotPasswordPage from "./Pages/auth/ForgotPassPage";
 import CheckemailPage from "./Pages/auth/CheckemailPage";
 import Homescreen from "./Pages/dashboard/Homescreen";
 import Apartmentpage from "./Pages/Services/Apartmentpage";
-import BottomNavigation from "./components/UI/BottomNavigation";
+import ApartmentCard from "./Pages/Services/ApartmentCard";
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route path="check-email" element={<CheckemailPage />} />
           <Route path="home" element={<Homescreen />} />
           <Route path="apartment" element={<Apartmentpage />} />
+          <Route path="details" element={<ApartmentCard />} />
         </Routes>
       </div>
     </>
