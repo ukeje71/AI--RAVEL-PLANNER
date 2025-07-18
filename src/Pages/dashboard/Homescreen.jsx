@@ -20,7 +20,7 @@ const Homescreen = () => {
     (product) => product.category === "apartment"
   );
   const airlines = Products.filter((product) => product.category === "airline");
-  const tourPlaces = Products.filter((product) => product.category === "tour");
+  const TourPlaces = Products.filter((product) => product.category === "Tour");
   // Routing function for clicking on the card
   const navigate = useNavigate();
   return (
@@ -77,12 +77,15 @@ const Homescreen = () => {
       </div>
       {/* Airlines Section */}
       <div className="mb-10">
-        <div className="flex gap-4 items-center mb-4">
+        <div
+          onClick={() => navigate("/airline")}
+          className="flex gap-4 items-center mb-4 cursor-pointer"
+        >
           <h2 className="text-xl font-semibold">Airlines</h2>
           <ArrowRightIcon className="text-black" />
         </div>
 
-        <div className="grid grid-cols-2 gap-2">
+        <div className="flex gap-4 items-center cursor-pointer mb-4">
           {airlines.slice(0, 2).map((airline) => (
             <Card
               key={airline.id}
@@ -98,13 +101,16 @@ const Homescreen = () => {
       </div>
       {/* Places to Tour Section */}
       <div>
-        <div className="flex gap-3 items-center mb-4">
+        <div
+          onClick={() => navigate("/tour")}
+          className="flex gap-4 items-center mb-4 cursor-pointer"
+        >
           <h2 className="text-xl font-semibold">Places to Tour</h2>
           <ArrowRightIcon className="text-black" />
         </div>
 
-        <div className="grid grid-cols-2 gap-2">
-          {tourPlaces.slice(0, 2).map((place) => (
+        <div className="flex gap-4 items-center cursor-pointer mb-4">
+          {TourPlaces.slice(0, 2).map((place) => (
             <Card
               key={place.id}
               imageUrl={place.image}

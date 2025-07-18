@@ -1,22 +1,39 @@
 import React from "react";
 import { KeyRound, Home, MapPin, ArrowLeft } from "lucide-react";
-import Palour7 from "../../assets/Images/Palour7.jpg";
 import { useNavigate } from "react-router";
-
+import useDetailsStore from "../../components/Store/details";
 const ApartmentCard = () => {
-  const navigate =useNavigate();
+  const navigate = useNavigate();
+  const { selectedProduct } = useDetailsStore();
+
+  // If no product is selected, show a message or redirect
+  if (!selectedProduct) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <p>No product selected. Please go back and select a product.</p>
+        <button 
+          onClick={() => navigate(-1)}
+          className="ml-2 text-blue-600 underline"
+        >
+          Go back
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-md mx-auto bg-white overflow-hidden absolute top-0 left-0 right-0 bottom-0">
       {/* Image */}
       <div className="relative">
         <img
-          src={Palour7}
-          alt="Apartment"
+          src={selectedProduct.image} // Dynamic image from product data
+          alt={selectedProduct.title}
           className="w-full rounded-b-xl h-[50vh] object-cover relative"
         />
         <button 
-        onClick={()=>navigate(-1)}
-        className="absolute top-3 left-3 bg-white rounded-full p-2 shadow-md hover:bg-gray-100">
+          onClick={() => navigate(-1)}
+          className="absolute top-3 left-3 bg-white rounded-full p-2 shadow-md hover:bg-gray-100"
+        >
           <ArrowLeft size={24} className="text-gray-800" />
         </button>
       </div>
@@ -24,7 +41,7 @@ const ApartmentCard = () => {
       {/* Details */}
       <section className="p-5 space-y-4 mx-4 bottom-0 bg-white absolute left-0 right-0 rounded-2xl shadow-lg">
         <h2 className="text-xl text-center font-semibold text-gray-900">
-          Victoria Island Executive Suite (1 Bed, 1 Bath)
+          {selectedProduct.title} {/* Dynamic title */}
         </h2>
 
         <div className="space-y-3">
@@ -32,11 +49,10 @@ const ApartmentCard = () => {
             <KeyRound size={20} className="text-[#1e1e1e] mt-0.5 flex-none" />
             <div className="flex-1">
               <p className="font-medium text-sm">
-                Exceptional check-in experience
+                {selectedProduct.medium1} {/* Dynamic heading */}
               </p>
               <p className="text-sm text-gray-500">
-                Contactless check-in with a smart lock and personalized welcome
-                gift.
+                {selectedProduct.Text1} {/* Dynamic text */}
               </p>
             </div>
           </div>
@@ -44,10 +60,11 @@ const ApartmentCard = () => {
           <div className="flex items-start gap-3">
             <Home size={20} className="text-[#1e1e1e] mt-0.5 flex-none" />
             <div className="flex-1">
-              <p className="font-medium text-sm">Apartment Overview</p>
+              <p className="font-medium text-sm">
+                {selectedProduct.Medium2} {/* Dynamic heading */}
+              </p>
               <p className="text-sm text-gray-500">
-                Chic executive suite with ocean views, modern amenities, and
-                24/7 electricity.
+                {selectedProduct.Text2} {/* Dynamic text */}
               </p>
             </div>
           </div>
@@ -55,9 +72,11 @@ const ApartmentCard = () => {
           <div className="flex items-start gap-3">
             <MapPin size={20} className="text-[#1e1e1e] mt-0.5 flex-none" />
             <div className="flex-1">
-              <p className="font-medium text-sm">Location Overview</p>
+              <p className="font-medium text-sm">
+                {selectedProduct.Medium3} {/* Dynamic heading */}
+              </p>
               <p className="text-sm text-gray-500">
-                Prime location in the city.
+                {selectedProduct.Text3} {/* Dynamic text */}
               </p>
             </div>
           </div>
@@ -66,8 +85,12 @@ const ApartmentCard = () => {
         {/* Price and Button */}
         <div className="flex items-center justify-between pt-4 border-t mt-4">
           <div className="text-left">
-            <p className="text-lg font-semibold text-gray-900">$200</p>
-            <p className="text-xs text-gray-500">For 1 night – 18 June 20</p>
+            <p className="text-lg font-semibold text-gray-900">
+              ${selectedProduct.Price} {/* Dynamic price */}
+            </p>
+            <p className="text-xs text-gray-500">
+              {selectedProduct.TimeFrame} {/* Dynamic timeframe */}
+            </p>
           </div>
           <button className="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
             Book Now

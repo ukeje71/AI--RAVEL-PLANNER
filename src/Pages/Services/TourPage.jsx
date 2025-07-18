@@ -5,10 +5,10 @@ import BottomNavigation from "../../components/UI/BottomNavigation";
 import Card from "../../components/UI/Card";
 import { Products } from "../../data/Product";
 
-const Apartmentpage = () => {
+const TourPage = () => {
   // Filter products by category
-  const apartments = Products.filter(
-    (product) => product.category === "apartment"
+  const Tours = Products.filter(
+    (product) => product.category === "Tour"
   );
   const navigate = useNavigate();
 
@@ -39,26 +39,26 @@ const Apartmentpage = () => {
         </div>
       </header>
 
-      {/* Apartments display */}
+      {/* Tours display */}
       <main className="px-4 py-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
-          {apartments.map((apartment) => (
+          {Tours.map((Tour) => (
             <Card
-              key={apartment.id}
-              imageUrl={apartment.image}
-              title={apartment.title}
-              location={apartment.location}
-              rating={apartment.rating}
-              TimeFrame={apartment.TimeFrame}
+              key={Tour.id}
+              imageUrl={Tour.image}
+              title={Tour.title}
+              location={Tour.location}
+              rating={Tour.rating}
+              TimeFrame={Tour.TimeFrame}
               className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow  duration-300"
               imageContainerClassName="h-[250px]"
             />
           ))}
         </div>
 
-        {apartments.length === 0 && (
+        {Tours.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500">No apartments found</p>
+            <p className="text-gray-500">No Tours found</p>
           </div>
         )}
       </main>
@@ -68,4 +68,4 @@ const Apartmentpage = () => {
   );
 };
 
-export default Apartmentpage;
+export default TourPage;
