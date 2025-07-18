@@ -1,8 +1,10 @@
 import React from "react";
 import { KeyRound, Home, MapPin, ArrowLeft } from "lucide-react";
 import Palour7 from "../../assets/Images/Palour7.jpg";
+import { useNavigate } from "react-router";
 
 const ApartmentCard = () => {
+  const navigate =useNavigate();
   return (
     <div className="max-w-md mx-auto bg-white overflow-hidden absolute top-0 left-0 right-0 bottom-0">
       {/* Image */}
@@ -12,7 +14,9 @@ const ApartmentCard = () => {
           alt="Apartment"
           className="w-full rounded-b-xl h-[50vh] object-cover relative"
         />
-        <button className="absolute top-3 left-3 bg-white rounded-full p-2 shadow-md hover:bg-gray-100">
+        <button 
+        onClick={()=>navigate(-1)}
+        className="absolute top-3 left-3 bg-white rounded-full p-2 shadow-md hover:bg-gray-100">
           <ArrowLeft size={24} className="text-gray-800" />
         </button>
       </div>

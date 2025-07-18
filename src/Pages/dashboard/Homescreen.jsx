@@ -21,8 +21,8 @@ const Homescreen = () => {
   );
   const airlines = Products.filter((product) => product.category === "airline");
   const tourPlaces = Products.filter((product) => product.category === "tour");
-// Routing function for clicking on the card
-const navigate = useNavigate();
+  // Routing function for clicking on the card
+  const navigate = useNavigate();
   return (
     <div className="bg-white min-h-screen p-6 pb-20">
       {/* Header */}
@@ -52,7 +52,10 @@ const navigate = useNavigate();
       </section>
       {/* Available Apartments Section */}
       <div className="mb-10">
-        <div onClick={() => navigate("/apartment")} className="flex gap-4 items-center cursor-pointer mb-4">
+        <div
+          onClick={() => navigate("/apartment")}
+          className="flex gap-4 items-center cursor-pointer mb-4"
+        >
           <h2 className="text-xl font-semibold">Available Apartments</h2>
           <ArrowRightIcon className="text-black" />
         </div>
@@ -67,7 +70,7 @@ const navigate = useNavigate();
               price={apartment.price}
               rating={apartment.rating}
               className="border border-gray-200"
-
+              imageContainerClassName="h-45"
             />
           ))}
         </div>
@@ -88,6 +91,7 @@ const navigate = useNavigate();
               location={airline.location}
               rating={airline.rating}
               className="border border-gray-200"
+              imageContainerClassName="h-45"
             />
           ))}
         </div>
@@ -108,7 +112,7 @@ const navigate = useNavigate();
               location={place.location}
               rating={place.rating}
               className="border border-gray-200"
-
+              imageContainerClassName="h-45"
             />
           ))}
         </div>

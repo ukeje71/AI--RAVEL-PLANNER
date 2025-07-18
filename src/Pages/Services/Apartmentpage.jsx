@@ -11,7 +11,7 @@ const Apartmentpage = () => {
     (product) => product.category === "apartment"
   );
   const navigate = useNavigate();
-  
+
   return (
     <div className="bg-white min-h-screen pb-20">
       {/* Header */}
@@ -51,10 +51,12 @@ const Apartmentpage = () => {
               rating={apartment.rating}
               TimeFrame={apartment.TimeFrame}
               className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow  duration-300"
+              // imageClassName="h-[250px]"
+              imageContainerClassName="h-[250px]"
             />
           ))}
         </div>
-        
+
         {apartments.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-500">No apartments found</p>
