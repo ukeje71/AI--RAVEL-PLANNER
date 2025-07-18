@@ -20,7 +20,7 @@ export const Products = [
   // APARTMENTS DATA
   {
     id: 1,
-    title: "Victoria Island Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite (1 Bed, 1 Bath)",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",
@@ -39,7 +39,7 @@ export const Products = [
   },
   {
     id: 2,
-    title: "Victoria Island Executive Suite (1 Bed, 1 Bath)",
+    title: " Executive Suite (1 Bed, 1 Bath)",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",
@@ -58,7 +58,7 @@ export const Products = [
   },
   {
     id: 3,
-    title: "Victoria Island Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite (1 Bed, 1 Bath)",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",
@@ -77,7 +77,7 @@ export const Products = [
   },
   {
     id: 4,
-    title: "Victoria Island Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite (1 Bed, 1 Bath)",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",
@@ -96,7 +96,7 @@ export const Products = [
   },
   {
     id: 5,
-    title: "Victoria Island Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite (1 Bed, 1 Bath)",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",
@@ -115,7 +115,7 @@ export const Products = [
   },
   {
     id: 6,
-    title: "Victoria Island Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite (1 Bed, 1 Bath)",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",
@@ -134,7 +134,7 @@ export const Products = [
   },
   {
     id: 7,
-    title: "Victoria Island Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite (1 Bed, 1 Bath)",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",

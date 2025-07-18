@@ -6,6 +6,8 @@ import SigninPage from "./Pages/auth/SigninPage";
 import ForgotPasswordPage from "./Pages/auth/ForgotPassPage";
 import CheckemailPage from "./Pages/auth/CheckemailPage";
 import Homescreen from "./Pages/dashboard/Homescreen";
+import Apartmentpage from "./Pages/Services/Apartmentpage";
+import BottomNavigation from "./components/UI/BottomNavigation";
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
           <Route path="forgot-password" element={<ForgotPasswordPage />} />
           <Route path="check-email" element={<CheckemailPage />} />
           <Route path="home" element={<Homescreen />} />
+          <Route path="apartment" element={<Apartmentpage />} />
         </Routes>
       </div>
     </>
