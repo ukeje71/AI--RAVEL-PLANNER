@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import BottomNavigation from "../../components/UI/BottomNavigation";
 import Card from "../../components/UI/Card";
-import { Products } from "../../data/Product";
+import { Products } from "../../data/product";
 
 const TourPage = () => {
   // Filter products by category
@@ -45,6 +45,7 @@ const TourPage = () => {
           {Tours.map((Tour) => (
             <Card
               key={Tour.id}
+                id={Tour.id} 
               imageUrl={Tour.image}
               title={Tour.title}
               location={Tour.location}

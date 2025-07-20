@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import BottomNavigation from "../../components/UI/BottomNavigation";
 import Card from "../../components/UI/Card";
-import { Products } from "../../data/Product";
+import { Products } from "../../data/product";
 
 const Apartmentpage = () => {
   // Filter products by category
@@ -45,6 +45,7 @@ const Apartmentpage = () => {
           {apartments.map((apartment) => (
             <Card
               key={apartment.id}
+              id={apartment.id} 
               imageUrl={apartment.image}
               title={apartment.title}
               location={apartment.location}

@@ -1,5 +1,5 @@
 import { MapPin, Star } from "lucide-react";
-import { useNavigate } from "react-router"; // Use react-router-dom instead of react-router
+import { useNavigate } from "react-router"; 
 import useDetailsStore from "../Store/details";
 
 const Card = ({
@@ -18,20 +18,20 @@ const Card = ({
   const { setSelectedProduct } = useDetailsStore();
 
   const handleImageClick = () => {
-    console.log('Attempting to select product ID:', id); // Debug
+    console.log("Attempting to select product ID:", id); // Debug
     setSelectedProduct(id);
-    navigate('/apartment/details/:id', { state: { productId: id } }); // Pass ID in route state as backup
+    navigate(`/apartment/details/${id}`); // ✅ Corrected path with actual ID
   };
 
   return (
     <div className={`relative rounded-lg overflow-hidden ${className}`}>
       {/* Clickable image area */}
-      <div 
+      <div
         className={`relative w-full ${imageContainerClassName}`}
         onClick={handleImageClick}
       >
         <img
-          src={imageUrl}
+          src={imageUrl || "/default-property.jpg"}
           alt={title}
           className={`w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform ${imageClassName}`}
         />
@@ -39,8 +39,8 @@ const Card = ({
           {price}
         </p>
       </div>
-      
-      {/* Non-clickable content below */}
+
+      {/* Details */}
       <div className="p-3">
         <div className="flex items-center justify-between font-bold">
           <div className="flex items-center">

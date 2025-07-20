@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import BottomNavigation from "../../components/UI/BottomNavigation";
 import Card from "../../components/UI/Card";
-import { Products } from "../../data/Product";
+import { Products } from "../../data/product";
 
 const Airline = () => {
   // Filter products by category
@@ -45,12 +45,13 @@ const Airline = () => {
           {airlines.map((airline) => (
             <Card
               key={airline.id}
+              id={airline.id} 
               imageUrl={airline.image}
               title={airline.title}
               location={airline.location}
               rating={airline.rating}
               TimeFrame={airline.TimeFrame}
-              className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow  duration-300"
+              className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300"
               imageContainerClassName="h-[250px]"
             />
           ))}

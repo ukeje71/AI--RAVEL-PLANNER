@@ -1,19 +1,27 @@
-// store.js
-import { create } from "zustand";
-import { Products } from "../../data/Product";
+import { create } from 'zustand';
+import { Products } from '../../data/product';
+
+
+// Validate products data
+const validateProducts = (products) => {
+  if (!Array.isArray(products)) {
+    console.error('Products data is invalid');
+    return [];
+  }
+  return products;
+};
 
 const useDetailsStore = create((set) => ({
-  products: Products,
+  products: validateProducts(Products),
   selectedProduct: null,
-
+  
   setSelectedProduct: (productId) => {
-    console.log("Setting product with ID:", productId); // Debug
-    console.log("Available products:", Products); // Debug
-    const selected = Products.find((p) => p.id === productId);
-    console.log("Found product:", selected); // Debug
-    set({ selectedProduct: selected });
+    const id = Number(productId); // Ensure numeric comparison
+    set((state) => ({
+      selectedProduct: state.products.find(p => p.id === id) || null
+    }));
   },
-
+  
   clearSelectedProduct: () => set({ selectedProduct: null }),
 }));
 

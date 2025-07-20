@@ -5,19 +5,17 @@ import Palour4 from "../assets/Images/Palour4.jpg";
 import Palour5 from "../assets/Images/Palour5.jpg";
 import Palour6 from "../assets/Images/Palour6.jpg";
 import Palour7 from "../assets/Images/Palour7.jpg";
-// Airlines images
 import Emirate1 from "../assets/Images/Emirate1.jpg";
 import Emirate2 from "../assets/Images/Emirate2.jpg";
 import Emirate3 from "../assets/Images/Emirate3.jpg";
 import Emirate4 from "../assets/Images/Emirate4.jpg";
 import Emirate5 from "../assets/Images/Emirate5.jpg";
 import Emirate6 from "../assets/Images/Emirate6.jpg";
-//Tour places
 import Tour1 from "../assets/Images/Conservation1.jpg";
 import Tour2 from "../assets/Images/Conservation2.jpg";
 
 export const Products = [
-  // APARTMENTS DATA
+  // APARTMENTS (IDs 1-7)
   {
     id: 1,
     title: "Executive Suite (1 Bed, 1 Bath)",
@@ -39,7 +37,7 @@ export const Products = [
   },
   {
     id: 2,
-    title: " Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite (1 Bed, 1 Bath)",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",
@@ -152,10 +150,9 @@ export const Products = [
     rating: 4.8,
   },
 
-  //   AIRLINES DATA
-
+  // AIRLINES (IDs 8-14)
   {
-    id: 1,
+    id: 8,
     title: "Emirates Business Class (DXB-LOS)",
     medium1: "Premium Lounge Access",
     Text1:
@@ -174,7 +171,7 @@ export const Products = [
     rating: 2.2,
   },
   {
-    id: 2,
+    id: 9,
     title: "Qatar Airways Economy (LOS-DOH)",
     medium1: "Comfort Guarantee",
     Text1:
@@ -193,7 +190,7 @@ export const Products = [
     rating: 4.2,
   },
   {
-    id: 3,
+    id: 10,
     title: "British Airways First Class (LHR-LOS)",
     medium1: "Exclusive Check-in",
     Text1:
@@ -211,9 +208,8 @@ export const Products = [
     location: "Heathrow Airport",
     rating: 4.8,
   },
-
   {
-    id: 4,
+    id: 11,
     title: "Air Peace Economy (LOS-JNB)",
     medium1: "Regional Comfort",
     Text1:
@@ -231,7 +227,7 @@ export const Products = [
     rating: 4.2,
   },
   {
-    id: 5,
+    id: 12,
     title: "Turkish Airlines Business Class (IST-LOS)",
     medium1: "Chef on Board",
     Text1:
@@ -249,9 +245,8 @@ export const Products = [
     location: "Istanbul Airport",
     rating: 4.7,
   },
-
   {
-    id: 6,
+    id: 13,
     title: "Ethiopian Airlines Premium Economy (ADD-LOS)",
     medium1: "Enhanced Comfort",
     Text1:
@@ -269,9 +264,8 @@ export const Products = [
     location: "Bole International Airport",
     rating: 4.3,
   },
-
   {
-    id: 7,
+    id: 14,
     title: "Lufthansa First Class (FRA-LOS)",
     medium1: "Private Terminal",
     Text1:
@@ -282,7 +276,7 @@ export const Products = [
     Medium3: "Route Information",
     Text3:
       "Direct flight from Frankfurt to Lagos with a flight time of 6 hours 15 minutes.",
-    image:Emirate4,
+    image: Emirate4,
     Price: 4200,
     TimeFrame: "Departure: 15 December 2023 • Return: 5 January 2024",
     category: "airline",
@@ -290,9 +284,9 @@ export const Products = [
     rating: 4.9,
   },
 
-  //   Tour places
+  // TOURS (IDs 15-21)
   {
-    id: 1,
+    id: 15,
     title: "Lekki Conservation Centre Nature Walk",
     medium1: "Unique Experience",
     Text1:
@@ -311,7 +305,7 @@ export const Products = [
     rating: 4.7,
   },
   {
-    id: 2,
+    id: 16,
     title: "Obudu Mountain Resort Getaway",
     medium1: "Premium Package",
     Text1:
@@ -330,7 +324,7 @@ export const Products = [
     rating: 4.9,
   },
   {
-    id: 3,
+    id: 17,
     title: "Badagry Slave Route History Tour",
     medium1: "Cultural Immersion",
     Text1:
@@ -349,7 +343,7 @@ export const Products = [
     rating: 4.5,
   },
   {
-    id: 4,
+    id: 18,
     title: "Yankari Game Safari Experience",
     medium1: "Wildlife Adventure",
     Text1:
@@ -368,7 +362,7 @@ export const Products = [
     rating: 4.8,
   },
   {
-    id: 5,
+    id: 19,
     title: "Nike Art Gallery Cultural Day",
     medium1: "Artistic Experience",
     Text1:
@@ -387,7 +381,7 @@ export const Products = [
     rating: 4.6,
   },
   {
-    id: 6,
+    id: 20,
     title: "Olumo Rock Historical Tour",
     medium1: "Heritage Site",
     Text1:
@@ -406,7 +400,7 @@ export const Products = [
     rating: 4.4,
   },
   {
-    id: 7,
+    id: 21,
     title: "Calabar Carnival VIP Experience",
     medium1: "Festival Package",
     Text1:
