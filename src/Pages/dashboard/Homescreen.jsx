@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import BottomNavigation from "../../components/UI/BottomNavigation";
 import Card from "../../components/UI/Card";
-import { Products } from "../../data/product";
+import { Products } from "../../data/Product";
 import { useNavigate } from "react-router";
 
 const Homescreen = () => {
@@ -64,7 +64,7 @@ const Homescreen = () => {
           {apartments.slice(0, 2).map((apartment) => (
             <Card
               key={apartment.id}
-              id={apartment.id} 
+              id={apartment.id}
               imageUrl={apartment.image}
               title={apartment.title}
               location={apartment.location}
