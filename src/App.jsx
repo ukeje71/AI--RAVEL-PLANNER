@@ -10,6 +10,8 @@ import Apartmentpage from "./Pages/Services/Apartmentpage";
 import ApartmentCard from "./Pages/Services/ApartmentCard";
 import TourPage from "./Pages/Services/TourPage";
 import Airline from "./Pages/Services/AirlinePage";
+import BookingForm from "./Pages/Services/Bookingform";
+import BookingConfirmation from "./components/UI/BookingConfirmation";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
       <Route path="/apartment" element={<Apartmentpage />} />
       <Route path="/tour" element={<TourPage />} />
       <Route path="/airline" element={<Airline />} />
+      <Route path="/booking" element={<BookingForm />} />
+      <Route path="/booking-confirmation" element={<BookingConfirmation />} />
 
       <Route path="/apartment/details/:id" element={<ApartmentCard />} />
     </Routes>

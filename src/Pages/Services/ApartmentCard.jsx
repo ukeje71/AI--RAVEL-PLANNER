@@ -141,7 +141,7 @@ const ApartmentCard = () => {
                   {selectedProduct.TimeFrame || "For 1 night – 18 June 20"}
                 </p>
               </div>
-              <button className="bg-blue-600 text-white text-sm sm:text-base font-medium px-4 py-2 sm:px-6 sm:py-3 rounded-md hover:bg-blue-700 transition-colors">
+              <button onClick={() => navigate("/booking")} className="bg-blue-600 text-white text-sm sm:text-base font-medium px-4 py-2 sm:px-6 sm:py-3 rounded-md hover:bg-blue-700 transition-colors">
                 Book Now
               </button>
             </div>
