@@ -18,7 +18,7 @@ export const Products = [
   // APARTMENTS (IDs 1-7)
   {
     id: 1,
-    title: "Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",
@@ -37,64 +37,62 @@ export const Products = [
   },
   {
     id: 2,
-    title: "Executive Suite (1 Bed, 1 Bath)",
+    title: "Pearl Residence",
     medium1: "Exceptional check-in experience",
     Text1:
-      "Contactless check-in with a smart lock and personalized welcome gift.",
+      "Smooth airport pickup and key handover by a courteous host within minutes.",
     Medium2: "Apartment Overview",
     Text2:
-      "Chic executive suite with ocean views, modern amenities, and 24/7 electricity.",
+      "Elegant 2-bedroom space with a homey feel, fully equipped kitchen, and smart TV.",
     Medium3: "Location Overview",
     Text3:
-      "Located in the heart of Victoria Island, close to restaurants, shops, and the beach.",
+      "Located in central Wuse 2, close to malls, embassies, and top restaurants.",
     image: Palour2,
     Price: 200,
     TimeFrame: "For 1 night - 18 June-20",
     category: "apartment",
-    location: "Abuja, Nigeria",
+    location: "Wuse 2, Abuja",
     rating: 5.2,
   },
   {
     id: 3,
-    title: "Executive Suite (1 Bed, 1 Bath)",
+    title: "Nest Apartments ",
     medium1: "Exceptional check-in experience",
-    Text1:
-      "Contactless check-in with a smart lock and personalized welcome gift.",
+    Text1: "Fast self-check-in with 24/7 concierge assistance on arrival.",
     Medium2: "Apartment Overview",
     Text2:
-      "Chic executive suite with ocean views, modern amenities, and 24/7 electricity.",
+      "Cozy, clean studio perfect for short stays, ideal for solo travelers or business guests.",
     Medium3: "Location Overview",
-    Text3:
-      "Located in the heart of Victoria Island, close to restaurants, shops, and the beach.",
+    Text3: "Quiet and secure area near business districts and transport links.",
     image: Palour3,
     Price: 200,
     TimeFrame: "For 1 night - 18 June-20",
     category: "apartment",
-    location: "Victoria Island",
+    location: " GRA Phase 2, Port Harcourt",
     rating: 4.8,
   },
   {
     id: 4,
-    title: "Executive Suite (1 Bed, 1 Bath)",
+    title: "Sapphire Lodge",
     medium1: "Exceptional check-in experience",
     Text1:
-      "Contactless check-in with a smart lock and personalized welcome gift.",
+      "Seamless smart door access with virtual tour and welcome call from host..",
     Medium2: "Apartment Overview",
     Text2:
-      "Chic executive suite with ocean views, modern amenities, and 24/7 electricity.",
+      "Trendy 1-bedroom apartment with smart home features and workspace setup.",
     Medium3: "Location Overview",
     Text3:
-      "Located in the heart of Victoria Island, close to restaurants, shops, and the beach.",
+      "Situated in a quiet estate in Lekki Phase 1, minutes from entertainment hubs.",
     image: Palour4,
     Price: 200,
     TimeFrame: "For 1 night - 18 June-20",
     category: "apartment",
-    location: "Victoria Island",
+    location: "Lekki Phase 1, Lagos",
     rating: 4.8,
   },
   {
     id: 5,
-    title: "Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",
@@ -113,7 +111,7 @@ export const Products = [
   },
   {
     id: 6,
-    title: "Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",
@@ -132,7 +130,7 @@ export const Products = [
   },
   {
     id: 7,
-    title: "Executive Suite (1 Bed, 1 Bath)",
+    title: "Executive Suite",
     medium1: "Exceptional check-in experience",
     Text1:
       "Contactless check-in with a smart lock and personalized welcome gift.",

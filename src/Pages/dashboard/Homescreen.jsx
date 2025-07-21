@@ -42,11 +42,11 @@ const Homescreen = () => {
       {/* Booking Section */}
       <section className="flex justify-between gap-4 px-4 mb-5 text-[#082C78]">
         <div className="bg-[#D3E0FB] p-3 rounded-md flex-1 flex items-center justify-center gap-2">
-          <Plane className="h-5 w-5" />
+          <Plane className="h-9 w-5" />
           <span className="text-sm">Trip</span>
         </div>
         <div className="bg-[#D3E0FB] p-3 rounded-md flex-1 flex items-center justify-center gap-2">
-          <NotebookPen className="h-5 w-5" />
+          <NotebookPen className="h-9 w-5" />
           <span className="text-sm">Book</span>
         </div>
       </section>
