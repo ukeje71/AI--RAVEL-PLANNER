@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import BottomNavigation from "../../components/UI/BottomNavigation";
 import Card from "../../components/UI/Card";
-import { Products } from "../../data/product";
+import { Products } from "../../data/products";
 
 const Apartmentpage = () => {
   // Filter products by category

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Products } from "../../data/Product";
+import { Products } from "../../data/products";
 
 // Validate products data
 const validateProducts = (products) => {

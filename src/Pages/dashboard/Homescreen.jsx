@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import BottomNavigation from "../../components/UI/BottomNavigation";
 import Card from "../../components/UI/Card";
-import { Products } from "../../data/Product";
+import { Products } from "../../data/products";
 import { useNavigate } from "react-router";
 
 const Homescreen = () => {
