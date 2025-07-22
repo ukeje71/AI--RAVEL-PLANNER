@@ -13,7 +13,15 @@ import Emirate5 from "../assets/Images/Emirate5.jpg";
 import Emirate6 from "../assets/Images/Emirate6.jpg";
 import Tour1 from "../assets/Images/Conservation1.jpg";
 import Tour2 from "../assets/Images/Conservation2.jpg";
-import { BaggageClaim } from "lucide-react";
+import {
+  Bed,
+  BedDouble,
+  KeyRound,
+  LucideBookText,
+  LucideStar,
+  MapPin,
+  User,
+} from "lucide-react";
 
 export const Products = [
   // APARTMENTS (IDs 1-7)
@@ -35,7 +43,8 @@ export const Products = [
     category: "apartment",
     location: "Victoria Island",
     rating: 4.8,
-
+    icon1: KeyRound,
+    icon2: BedDouble,
   },
   {
     id: 2,
@@ -55,6 +64,8 @@ export const Products = [
     category: "apartment",
     location: "Wuse 2, Abuja",
     rating: 5.2,
+    icon1: KeyRound,
+    icon2: BedDouble,
   },
   {
     id: 3,
@@ -72,6 +83,8 @@ export const Products = [
     category: "apartment",
     location: " GRA Phase 2, Port Harcourt",
     rating: 4.8,
+    icon1: KeyRound,
+    icon2: BedDouble,
   },
   {
     id: 4,
@@ -91,6 +104,8 @@ export const Products = [
     category: "apartment",
     location: "Lekki Phase 1, Lagos",
     rating: 4.8,
+    icon1: KeyRound,
+    icon2: BedDouble,
   },
   {
     id: 5,
@@ -110,6 +125,8 @@ export const Products = [
     category: "apartment",
     location: "Victoria Island",
     rating: 4.8,
+    icon1: KeyRound,
+    icon2: BedDouble,
   },
   {
     id: 6,
@@ -129,6 +146,8 @@ export const Products = [
     category: "apartment",
     location: "Victoria Island",
     rating: 4.8,
+    icon1: KeyRound,
+    icon2: BedDouble,
   },
   {
     id: 7,
@@ -148,6 +167,8 @@ export const Products = [
     category: "apartment",
     location: "Victoria Island",
     rating: 4.8,
+    icon1: KeyRound,
+    icon2: BedDouble,
   },
 
   // AIRLINES (IDs 8-14)
@@ -165,10 +186,12 @@ export const Products = [
       "Direct flight from Dubai to Lagos with a flight time of approximately 7 hours 30 minutes.",
     image: Emirate1,
     Price: 2500,
-    TimeFrame: "Departure: 15 June 2023 • Return: 22 June 2023",
+    TimeFrame: "Departure: 15 June 2023",
     category: "airline",
     location: "Air Nigeria",
     rating: 2.2,
+    icon1: LucideStar,
+    icon2: LucideBookText,
   },
   {
     id: 9,
@@ -184,10 +207,12 @@ export const Products = [
       "Connecting flight from Lagos to Doha with a layover time of 2 hours.",
     image: Emirate2,
     Price: 850,
-    TimeFrame: "Departure: 10 July 2023 • Return: 25 July 2023",
+    TimeFrame: "Departure: 10 July 2023",
     category: "airline",
     location: "Emirates",
     rating: 4.2,
+    icon1: LucideStar,
+    icon2: LucideBookText,
   },
   {
     id: 10,
@@ -203,10 +228,12 @@ export const Products = [
       "Direct flight from London Heathrow to Lagos with a flight time of 6 hours 45 minutes.",
     image: Emirate3,
     Price: 3800,
-    TimeFrame: "Departure: 5 August 2023 • Return: 20 August 2023",
+    TimeFrame: "Departure: 5 August 2023",
     category: "airline",
     location: "Heathrow Airport",
     rating: 4.8,
+    icon1: LucideStar,
+    icon2: LucideBookText,
   },
   {
     id: 11,
@@ -221,10 +248,12 @@ export const Products = [
       "Direct flight from Lagos to Johannesburg with a flight time of 5 hours 30 minutes.",
     image: Emirate4,
     Price: 750,
-    TimeFrame: "Departure: 8 November 2023 • Return: 22 November 2023",
+    TimeFrame: "Departure: 8 November 2023",
     category: "airline",
     location: "Murtala Muhammed International Airport",
     rating: 4.2,
+    icon1: LucideStar,
+    icon2: LucideBookText,
   },
   {
     id: 12,
@@ -240,10 +269,12 @@ export const Products = [
       "Direct flight from Istanbul to Lagos with a flight time of 5 hours 15 minutes.",
     image: Emirate5,
     Price: 2100,
-    TimeFrame: "Departure: 3 October 2023 • Return: 17 October 2023",
+    TimeFrame: "Departure: 3 October 2023",
     category: "airline",
     location: "Istanbul Airport",
     rating: 4.7,
+    icon1: LucideStar,
+    icon2: LucideBookText,
   },
   {
     id: 13,
@@ -259,10 +290,12 @@ export const Products = [
       "Connecting flight from Addis Ababa to Lagos with a 1.5 hour layover.",
     image: Emirate6,
     Price: 1200,
-    TimeFrame: "Departure: 12 September 2023 • Return: 28 September 2023",
+    TimeFrame: "Departure: 12 September 2023",
     category: "airline",
     location: "Bole International Airport",
     rating: 4.3,
+    icon1: LucideStar,
+    icon2: LucideBookText,
   },
   {
     id: 14,
@@ -278,10 +311,12 @@ export const Products = [
       "Direct flight from Frankfurt to Lagos with a flight time of 6 hours 15 minutes.",
     image: Emirate4,
     Price: 4200,
-    TimeFrame: "Departure: 15 December 2023 • Return: 5 January 2024",
+    TimeFrame: "Departure: 15 December 2023",
     category: "airline",
     location: "Frankfurt Airport",
     rating: 4.9,
+    icon1: LucideStar,
+    icon2: LucideBookText,
   },
 
   // TOURS (IDs 15-21)
@@ -290,7 +325,7 @@ export const Products = [
     title: "Lekki Conservation Centre Nature Walk",
     medium1: "Unique Experience",
     Text1:
-      "Walk the longest canopy walkway in Africa with stunning views of the rainforest and wildlife.",
+      "Address: Colosseum Entrance, Rome Meeting Point: Colosseum Main Gate\nNearby: Roman Forum, Palatine Hill",
     Medium2: "Tour Overview",
     Text2:
       "Guided nature Tour through 78 hectares of protected wetlands and savannah with opportunities to see monkeys, crocodiles, and exotic birds.",
@@ -299,10 +334,12 @@ export const Products = [
       "Located in Lekki, just 30 minutes from Victoria Island with easy access to other attractions.",
     image: Tour1,
     Price: 25,
-    TimeFrame: "Daily Tours from 9AM-5PM • Duration: 2-3 hours",
+    TimeFrame: "Daily Tours from 9AM-5PM",
     category: "Tour",
     location: "Lekki, Lagos",
     rating: 4.7,
+    icon1: MapPin,
+    icon2: User,
   },
   {
     id: 16,
@@ -318,10 +355,12 @@ export const Products = [
       "Includes roundtrip flights from Lagos to Calabar and private transfers to the resort.",
     image: Tour2,
     Price: 450,
-    TimeFrame: "3 days/2 nights package • Available year-round",
+    TimeFrame: "3 days/2 nights package",
     category: "Tour",
     location: "Obudu, Ranch",
     rating: 4.9,
+    icon1: MapPin,
+    icon2: User,
   },
   {
     id: 17,
@@ -337,10 +376,12 @@ export const Products = [
       "Air-conditioned transport from Lagos with lunch at a local restaurant included.",
     image: Tour1,
     Price: 75,
-    TimeFrame: "Full day Tour • Departs 7AM from Victoria Island",
+    TimeFrame: "Full day Tour",
     category: "Tour",
     location: "Badagry, Lagos",
     rating: 4.5,
+    icon1: MapPin,
+    icon2: User,
   },
   {
     id: 18,
@@ -356,10 +397,12 @@ export const Products = [
       "Includes return flights from Lagos to Bauchi, all transfers, full board accommodation and guided Tours.",
     image: Tour2,
     Price: 600,
-    TimeFrame: "4 days/3 nights • Best visited November-March",
+    TimeFrame: "4 days/3 nights",
     category: "Tour",
     location: "Yankari, Bauchi",
     rating: 4.8,
+    icon1: MapPin,
+    icon2: User,
   },
   {
     id: 19,
@@ -375,17 +418,19 @@ export const Products = [
       "Located in Lekki Phase 1 with beautiful lagoon views and easy access to other attractions.",
     image: Tour1,
     Price: 40,
-    TimeFrame: "Daily from 10AM-6PM • Duration: 3-4 hours",
+    TimeFrame: "Daily from 10AM-6PM",
     category: "Tour",
     location: "Lekki, Lagos",
     rating: 4.6,
+    icon1: MapPin,
+    icon2: User,
   },
   {
     id: 20,
     title: "Olumo Rock Historical Tour",
     medium1: "Heritage Site",
     Text1:
-      "Climb the ancient rock formation that served as a natural fortress during inter-tribal wars.",
+      "Meeting Point: Pyramid Entrance of the Louvre\nNearby: Musée d’Orsay, Notre-Dame Cathedral",
     Medium2: "Tour Features",
     Text2:
       "Visit sacred caves, historical shrines, and enjoy panoramic views of Abeokuta from the summit.",
@@ -394,10 +439,12 @@ export const Products = [
       "Roundtrip transport from Lagos with knowledgeable local guides and lunch included.",
     image: Tour2,
     Price: 65,
-    TimeFrame: "Day trip • Departs 7AM from Lagos",
+    TimeFrame: "Day trip",
     category: "Tour",
     location: "Abeokuta, Ogun",
     rating: 4.4,
+    icon1: MapPin,
+    icon2: User,
   },
   {
     id: 21,
@@ -413,9 +460,11 @@ export const Products = [
       "Held annually in December featuring colorful parades, cultural displays and international performers.",
     image: Tour1,
     Price: 800,
-    TimeFrame: "5 days/4 nights • December 26-30",
+    TimeFrame: "5 days/4 nights",
     category: "Tour",
     location: "Calabar, Cross River",
     rating: 4.9,
+    icon1: MapPin,
+    icon2: User,
   },
 ];

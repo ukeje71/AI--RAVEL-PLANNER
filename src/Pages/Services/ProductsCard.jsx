@@ -3,10 +3,9 @@ import {
   KeyRound,
   MapPin,
   ArrowLeft,
-  Bed,
   Heart,
   Star,
-  BedDoubleIcon,
+  BedDouble,
 } from "lucide-react";
 import { useNavigate } from "react-router";
 import useDetailsStore from "../../components/Store/details";
@@ -14,7 +13,8 @@ import useDetailsStore from "../../components/Store/details";
 const ProductsCard = () => {
   const navigate = useNavigate();
   const { selectedProduct, clearSelectedProduct } = useDetailsStore();
-
+  const Icon1 = selectedProduct?.icon1 || KeyRound;
+  const Icon2 = selectedProduct?.icon2 || BedDouble;
   useEffect(() => {
     if (!selectedProduct) {
       navigate(-1);
@@ -52,7 +52,10 @@ const ProductsCard = () => {
 
         {/* Floating Rating Badge - Responsive positioning */}
         <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-white/90 rounded-full px-3 py-1 flex items-center shadow-sm">
-          <Star size={14} className="text-yellow-500 fill-yellow-500 mr-1 sm:w-4 sm:h-4" />
+          <Star
+            size={14}
+            className="text-yellow-500 fill-yellow-500 mr-1 sm:w-4 sm:h-4"
+          />
           <span className="text-xs font-medium sm:text-sm">
             {selectedProduct.rating || "2.8"}
           </span>
@@ -82,12 +85,17 @@ const ProductsCard = () => {
               </div>
               <div className="bg-gray-50 rounded-lg p-3">
                 <p className="text-xs text-gray-500">Price</p>
-                <p className="font-medium text-sm">${selectedProduct.Price}/night</p>
+                <p className="font-medium text-sm">
+                  ${selectedProduct.Price}/night
+                </p>
               </div>
               <div className="bg-gray-50 rounded-lg p-3">
                 <p className="text-xs text-gray-500">Rating</p>
                 <p className="font-medium text-sm flex items-center">
-                  <Star size={14} className="text-yellow-500 fill-yellow-500 mr-1" />
+                  <Star
+                    size={14}
+                    className="text-yellow-500 fill-yellow-500 mr-1"
+                  />
                   {selectedProduct.rating || "2.8"}
                 </p>
               </div>
@@ -96,22 +104,24 @@ const ProductsCard = () => {
             {/* Details Sections - Responsive spacing */}
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-start gap-3">
-                <KeyRound size={18} className="text-[#1e1e1e] mt-0.5 flex-none sm:w-5 sm:h-5" />
+                <Icon1 size={18} className="text-gray-800" />
                 <div className="flex-1">
                   <p className="font-medium text-sm sm:text-base">
-                    Exceptional check-in experience
+                    {selectedProduct.medium1}
                   </p>
                   <p className="text-xs text-gray-500 sm:text-sm">
-                  {selectedProduct.Text1}
+                    {selectedProduct.Text1}
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                {/* <BedDoubleIcon size={18} /> */}
-                  {selectedProduct.icon || <BedDoubleIcon size={18} className="text-gray-800" />}
+                <Icon2 size={18} className="text-gray-800" />
                 <div className="flex-1">
-                  <p className="font-medium text-sm sm:text-base">Apartment Overview</p>
+                  <p className="font-medium text-sm sm:text-base">
+                    {selectedProduct.Medium2}
+                  </p>
+
                   <p className="text-xs text-gray-500 sm:text-sm">
                     {selectedProduct.Text2 ||
                       "Chic executive suite with ocean views, modern amenities, and 24/7 electricity."}
@@ -120,9 +130,14 @@ const ProductsCard = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-[#1e1e1e] mt-0.5 flex-none sm:w-5 sm:h-5" />
+                <MapPin
+                  size={18}
+                  className="text-[#1e1e1e] mt-0.5 flex-none sm:w-5 sm:h-5"
+                />
                 <div className="flex-1">
-                  <p className="font-medium text-sm sm:text-base">Location Overview</p>
+                  <p className="font-medium text-sm sm:text-base">
+                    Location Overview
+                  </p>
                   <p className="text-xs text-gray-500 sm:text-sm">
                     {selectedProduct.location || "..."}
                   </p>
@@ -142,7 +157,10 @@ const ProductsCard = () => {
                   {selectedProduct.TimeFrame || "For 1 night – 18 June 20"}
                 </p>
               </div>
-              <button onClick={() => navigate("/booking")} className="bg-blue-600 text-white text-sm sm:text-base font-medium px-4 py-2 sm:px-6 sm:py-3 rounded-md hover:bg-blue-700 transition-colors">
+              <button
+                onClick={() => navigate("/booking")}
+                className="bg-blue-600 text-white text-sm sm:text-base font-medium px-4 py-2 sm:px-6 sm:py-3 rounded-md hover:bg-blue-700 transition-colors"
+              >
                 Book Now
               </button>
             </div>
