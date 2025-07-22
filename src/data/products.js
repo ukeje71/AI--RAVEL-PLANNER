@@ -13,6 +13,7 @@ import Emirate5 from "../assets/Images/Emirate5.jpg";
 import Emirate6 from "../assets/Images/Emirate6.jpg";
 import Tour1 from "../assets/Images/Conservation1.jpg";
 import Tour2 from "../assets/Images/Conservation2.jpg";
+import { BaggageClaim } from "lucide-react";
 
 export const Products = [
   // APARTMENTS (IDs 1-7)
@@ -34,6 +35,7 @@ export const Products = [
     category: "apartment",
     location: "Victoria Island",
     rating: 4.8,
+
   },
   {
     id: 2,

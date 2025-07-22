@@ -15,7 +15,7 @@ const useDetailsStore = create((set) => ({
   selectedProduct: null,
 
   setSelectedProduct: (productId) => {
-    const id = Number(productId); // Ensure numeric comparison
+    const id = Number(productId);
     set((state) => ({
       selectedProduct: state.products.find((p) => p.id === id) || null,
     }));

@@ -31,7 +31,7 @@ function App() {
       <Route path="/booking-confirmation" element={<BookingConfirmation />} />
       <Route path="/airlineform" element={<AirlinesForm />} />
 
-      <Route path="/apartment/details/:id" element={<ProductsCard />} />
+      <Route path="/productdetails/:id" element={<ProductsCard />} />
     </Routes>
   );
 }

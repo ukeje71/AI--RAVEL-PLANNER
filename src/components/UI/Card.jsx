@@ -20,7 +20,7 @@ const Card = ({
   const handleImageClick = () => {
     console.log("Attempting to select product ID:", id); // Debug
     setSelectedProduct(id);
-    navigate(`/apartment/details/${id}`); // ✅ Corrected path with actual ID
+    navigate(`/productdetails/${id}`); 
   };
 
   return (

@@ -108,7 +108,8 @@ const ProductsCard = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <BedDoubleIcon size={18} className="text-[#1e1e1e] mt-0.5 flex-none sm:w-5 sm:h-5" />
+                {/* <BedDoubleIcon size={18} /> */}
+                  {selectedProduct.icon || <BedDoubleIcon size={18} className="text-gray-800" />}
                 <div className="flex-1">
                   <p className="font-medium text-sm sm:text-base">Apartment Overview</p>
                   <p className="text-xs text-gray-500 sm:text-sm">
