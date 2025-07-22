@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import BookingConfirmation from "../../components/UI/BookingConfirmation";
 
 const BookingForm = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const BookingForm = () => {
     numberOfGuests: "",
     departureDate: "",
   });
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   // Check if all fields are filled
   const isFormComplete = Object.values(formData).every(
@@ -24,12 +26,13 @@ const BookingForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isFormComplete) {
+      setShowConfirmation(true);
       console.log("Form submitted:", formData);
     }
   };
 
   return (
-    <div className="min-h-screen bg-white p-4 flex flex-col items-center">
+    <div className="min-h-screen bg-white p-4 flex flex-col items-center relative">
       {/* Header */}
       <div className="flex items-center justify-center relative mb-8 w-full max-w-md">
         <button
@@ -119,6 +122,10 @@ const BookingForm = () => {
           Complete
         </button>
       </form>
+
+      {showConfirmation && (
+        <BookingConfirmation onClose={() => setShowConfirmation(false)} />
+      )}
     </div>
   );
 };
