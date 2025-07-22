@@ -11,7 +11,7 @@ import {
 import { useNavigate } from "react-router";
 import useDetailsStore from "../../components/Store/details";
 
-const ApartmentCard = () => {
+const ProductsCard = () => {
   const navigate = useNavigate();
   const { selectedProduct, clearSelectedProduct } = useDetailsStore();
 
@@ -26,7 +26,7 @@ const ApartmentCard = () => {
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen flex flex-col overflow-hidden md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
       {/* Image Section - Responsive height */}
-      <div className="relative flex-shrink-0 h-[40vh] sm:h-[50vh] md:h-[60vh]">
+      <div className="relative flex-shrink-0 h-[50vh] sm:h-[50vh] md:h-[60vh]">
         <img
           src={selectedProduct.image}
           alt={selectedProduct.name}
@@ -152,4 +152,4 @@ const ApartmentCard = () => {
   );
 };
 
-export default ApartmentCard;
+export default ProductsCard;

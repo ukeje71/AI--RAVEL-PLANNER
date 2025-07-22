@@ -1,7 +1,9 @@
 import { ArrowLeft } from "lucide-react";
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 const BookingForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     arrivalDate: "",
     guestDetails: "",
@@ -10,7 +12,9 @@ const BookingForm = () => {
   });
 
   // Check if all fields are filled
-  const isFormComplete = Object.values(formData).every((field) => field.trim() !== "");
+  const isFormComplete = Object.values(formData).every(
+    (field) => field.trim() !== ""
+  );
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,17 +32,27 @@ const BookingForm = () => {
     <div className="min-h-screen bg-white p-4 flex flex-col items-center">
       {/* Header */}
       <div className="flex items-center justify-center relative mb-8 w-full max-w-md">
-        <button className="absolute left-0 text-2xl">
+        <button
+          onClick={() => navigate(-1)}
+          className="absolute left-0 text-2xl"
+        >
           <ArrowLeft />
         </button>
-        <h2 className="text-lg font-medium text-[#262626]">Available Apartment</h2>
+        <h2 className="text-lg font-medium text-[#262626]">
+          Available Apartment
+        </h2>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="space-y-5 w-full max-w-md flex-1 flex flex-col justify-between">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-5 w-full max-w-md flex-1 flex flex-col justify-between"
+      >
         <div className="space-y-5">
           <div>
-            <label className="block mb-4 text-sm font-medium">Arrival Date</label>
+            <label className="block mb-4 text-sm font-medium">
+              Arrival Date
+            </label>
             <input
               type="date"
               name="arrivalDate"
@@ -50,7 +64,9 @@ const BookingForm = () => {
           </div>
 
           <div>
-            <label className="block mb-4 text-sm font-medium">Guest Details</label>
+            <label className="block mb-4 text-sm font-medium">
+              Guest Details
+            </label>
             <input
               type="text"
               name="guestDetails"
@@ -62,7 +78,9 @@ const BookingForm = () => {
           </div>
 
           <div>
-            <label className="block mb-4 text-sm font-medium">Number of Guests</label>
+            <label className="block mb-4 text-sm font-medium">
+              Number of Guests
+            </label>
             <input
               type="number"
               name="numberOfGuests"
@@ -74,7 +92,9 @@ const BookingForm = () => {
           </div>
 
           <div>
-            <label className="block mb-4 text-sm font-medium">Departure Date</label>
+            <label className="block mb-4 text-sm font-medium">
+              Departure Date
+            </label>
             <input
               type="date"
               name="departureDate"
@@ -91,7 +111,9 @@ const BookingForm = () => {
           type="submit"
           disabled={!isFormComplete}
           className={`w-full py-3 rounded-sm text-black text-sm font-medium ${
-            isFormComplete ? "bg-[#2563EB] text-white" : "bg-gray-400 cursor-not-allowed"
+            isFormComplete
+              ? "bg-[#2563EB] text-white"
+              : "bg-gray-400 cursor-not-allowed"
           }`}
         >
           Complete

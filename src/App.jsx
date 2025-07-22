@@ -7,11 +7,12 @@ import ForgotPasswordPage from "./Pages/auth/ForgotPassPage";
 import CheckemailPage from "./Pages/auth/CheckemailPage";
 import Homescreen from "./Pages/dashboard/Homescreen";
 import Apartmentpage from "./Pages/Services/Apartmentpage";
-import ApartmentCard from "./Pages/Services/ApartmentCard";
+import ProductsCard from "./Pages/Services/ProductsCard";
 import TourPage from "./Pages/Services/TourPage";
 import Airline from "./Pages/Services/AirlinePage";
 import BookingForm from "./Pages/Services/Bookingform";
 import BookingConfirmation from "./components/UI/BookingConfirmation";
+import AirlinesForm from "./Pages/Services/AirlinesForm";
 
 function App() {
   return (
@@ -28,8 +29,9 @@ function App() {
       <Route path="/airline" element={<Airline />} />
       <Route path="/booking" element={<BookingForm />} />
       <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+      <Route path="/airlineform" element={<AirlinesForm />} />
 
-      <Route path="/apartment/details/:id" element={<ApartmentCard />} />
+      <Route path="/apartment/details/:id" element={<ProductsCard />} />
     </Routes>
   );
 }

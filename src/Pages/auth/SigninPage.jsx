@@ -32,7 +32,7 @@ const SigninPage = () => {
     console.log("Login data:", formData);
     setTimeout(() => {
       setIsLoading(false);
-      navigate("/dashboard");
+      navigate("/home");
     }, 1500);
   };
 

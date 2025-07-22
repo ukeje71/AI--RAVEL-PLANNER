@@ -4,7 +4,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { ChevronRightIcon } from "lucide-react";
+import { ArrowRight, ChevronRightIcon } from "lucide-react";
 
 
 // Images
@@ -44,9 +44,9 @@ const OnboardPage = () => {
     <div className="min-h-[100vh] flex flex-col bg-gray-50 overflow-hidden">
       {/* Main Content Area (will grow to fill space) */}
       <div className="flex-1 py-12 px-4">
-        <h2 className="text-sm font-bold text-right text-[#2563EB] mb-20">
-          Skip
-        </h2>
+        <button onClick={()=>navigate("/home")} className="text-sm font-bold justify-end flex w-full text-[#2563EB] mb-20">
+          <ArrowRight/>
+        </button>
         
         {/* Swiper Carousel */}
         <Swiper
