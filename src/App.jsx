@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router"; // Correct import
+import { BrowserRouter, Route, Routes, useLocation } from "react-router";
 import WelcomePage from "./Pages/WelcomePage";
 import OnboardPage from "./Pages/Onboard";
 import SignupPage from "./Pages/auth/SignupPage";
@@ -16,28 +16,39 @@ import AirlinesForm from "./Pages/Services/AirlinesForm";
 import PaymentMethods from "./Pages/Services/PaymentMethods";
 import AddCard from "./Pages/Services/AddCard";
 import TourForm from "./Pages/Services/TourForm";
+import Saved from "./Pages/dashboard/Saved";
+import BottomNavigation from "./components/UI/BottomNavigation";
+import AccountMenu from "./Pages/dashboard/AccountMenu";
 
 function App() {
+  const location = useLocation();
+  const showBottomNav = location.pathname === "/home" || location.pathname === "/saved" || location.pathname === "/accountmenu";
+
   return (
-    <Routes>
-      <Route path="/" element={<WelcomePage />} />
-      <Route path="/onboard" element={<OnboardPage />} />
-      <Route path="/signup" element={<SignupPage />} />
-      <Route path="/signin" element={<SigninPage />} />
-      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-      <Route path="/check-email" element={<CheckemailPage />} />
-      <Route path="/home" element={<Homescreen />} />
-      <Route path="/apartment" element={<Apartmentpage />} />
-      <Route path="/tour" element={<TourPage />} />
-      <Route path="/airline" element={<Airline />} />
-      <Route path="/booking" element={<BookingForm />} />
-      <Route path="/booking-confirmation" element={<BookingConfirmation />} />
-      <Route path="/airlineform" element={<AirlinesForm />} />
-      <Route path="/paymentmethods" element={<PaymentMethods />} />
-      <Route path="/addcard" element={<AddCard />} />
-      <Route path="/tourform" element={<TourForm />} />
-      <Route path="/productdetails/:id" element={<ProductsCard />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/onboard" element={<OnboardPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signin" element={<SigninPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/check-email" element={<CheckemailPage />} />
+        <Route path="/home" element={<Homescreen />} />
+        <Route path="/apartment" element={<Apartmentpage />} />
+        <Route path="/tour" element={<TourPage />} />
+        <Route path="/airline" element={<Airline />} />
+        <Route path="/booking" element={<BookingForm />} />
+        <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+        <Route path="/airlineform" element={<AirlinesForm />} />
+        <Route path="/paymentmethods" element={<PaymentMethods />} />
+        <Route path="/addcard" element={<AddCard />} />
+        <Route path="/saved" element={<Saved />} />
+        <Route path="/accountmenu" element={<AccountMenu />} />
+        <Route path="/tourform" element={<TourForm />} />
+        <Route path="/productdetails/:id" element={<ProductsCard />} />
+      </Routes>
+      {showBottomNav && <BottomNavigation />}
+    </>
   );
 }
 

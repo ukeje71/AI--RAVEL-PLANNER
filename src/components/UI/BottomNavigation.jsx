@@ -1,15 +1,19 @@
 import React from "react";
 import { House, MessageSquare, Download, User } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const BottomNavigation = () => {
   const [activeTab, setActiveTab] = React.useState("home");
-
+  const navigate = useNavigate();
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200">
       <div className="flex justify-around items-center h-16">
         {/* House */}
         <button
-          onClick={() => setActiveTab("home")}
+          onClick={() => {
+            setActiveTab("home");
+            navigate("/home");
+          }}
           className={`flex flex-col items-center justify-center w-full h-full ${
             activeTab === "home" ? "text-blue-500" : "text-gray-500"
           }`}
@@ -37,7 +41,10 @@ const BottomNavigation = () => {
 
         {/* Saved */}
         <button
-          onClick={() => setActiveTab("saved")}
+          onClick={() => {
+            setActiveTab("saved");
+            navigate("/saved");
+          }}
           className={`flex flex-col items-center justify-center w-full h-full ${
             activeTab === "saved" ? "text-blue-500" : "text-gray-500"
           }`}
@@ -48,10 +55,13 @@ const BottomNavigation = () => {
           />
           <span className="text-xs mt-1">Saved</span>
         </button>
-
+          
         {/* Account */}
         <button
-          onClick={() => setActiveTab("account")}
+          onClick={() => {
+            setActiveTab("account");
+            navigate("/accountmenu");
+          }}
           className={`flex flex-col items-center justify-center w-full h-full ${
             activeTab === "account" ? "text-blue-500" : "text-gray-500"
           }`}

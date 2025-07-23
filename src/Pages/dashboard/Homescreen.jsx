@@ -126,7 +126,7 @@ const Homescreen = () => {
           ))}
         </div>
       </div>
-      <BottomNavigation />
+      {/* <BottomNavigation /> */}
     </div>
   );
 };
