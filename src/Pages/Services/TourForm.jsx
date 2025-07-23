@@ -5,10 +5,10 @@ import { useNavigate } from "react-router";
 const TourForm = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    travelBasics: "",
-    budgetDetails: "",
-    interestPreference: "",
-    companionDetails: ""
+    date: "",
+    durationpreference: "",
+    Groupsize: "",
+    experienceType: ""
   });
 
   const handleChange = (e) => {
@@ -42,65 +42,65 @@ const TourForm = () => {
 
       {/* Form */}
       <form className="flex-grow space-y-5" onSubmit={handleSubmit}>
-        {/* Travel Basics */}
+        {/* Date / Time Preference */}
         <div>
           <label className="block text-sm font-medium text-gray-800 mb-1">
-            Travel Basics
+            Date / Time Preference
           </label>
           <input
-            type="text"
-            name="travelBasics"
-            value={formData.travelBasics}
+            type="date"
+            name="date"
+            value={formData.date}
             onChange={handleChange}
-            placeholder="Travel Basics"
+            placeholder="Date / Time Preference"
             className="w-full px-4 py-3 bg-gray-100 rounded-lg text-gray-800 focus:outline-none"
             required
           />
         </div>
 
-        {/* Budget Details */}
+        {/*Duration Preference */}
         <div>
           <label className="block text-sm font-medium text-gray-800 mb-1">
-            Budget Details
+           Duration Preference
           </label>
           <input
             type="text"
-            name="budgetDetails"
-            value={formData.budgetDetails}
+            name="durationpreference"
+            value={formData.durationpreference}
             onChange={handleChange}
-            placeholder="Budget Details"
+            placeholder="Duration Preference"
             className="w-full px-4 py-3 bg-gray-100 rounded-lg text-gray-800 focus:outline-none"
             required
           />
         </div>
 
-        {/* Interest/Preference */}
+        {/* Group Size */}
         <div>
           <label className="block text-sm font-medium text-gray-800 mb-1">
-            Interest/Preference
+            Group Size
           </label>
           <input
             type="text"
-            name="interestPreference"
-            value={formData.interestPreference}
+            name="Groupsize"
+            value={formData.Groupsize}
             onChange={handleChange}
-            placeholder="Interest/Preference"
+            placeholder="Group Size"
             className="w-full px-4 py-3 bg-gray-100 rounded-lg text-gray-800 focus:outline-none"
             required
           />
         </div>
 
-        {/* Companion Details */}
+        {/* Experience Type */}
         <div>
           <label className="block text-sm font-medium text-gray-800 mb-1">
-            Companion Details
+            Experience Type
           </label>
           <input
             type="text"
-            name="companionDetails"
-            value={formData.companionDetails}
+            name="experienceType"
+            value={formData.experienceType}
             onChange={handleChange}
-            placeholder="Companion Details"
+            placeholder="Experience Type"
             className="w-full px-4 py-3 bg-gray-100 rounded-lg text-gray-800 focus:outline-none"
             required
           />
