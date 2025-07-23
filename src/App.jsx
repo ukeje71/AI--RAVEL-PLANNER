@@ -13,6 +13,7 @@ import Airline from "./Pages/Services/AirlinePage";
 import BookingForm from "./Pages/Services/Bookingform";
 import BookingConfirmation from "./components/UI/BookingConfirmation";
 import AirlinesForm from "./Pages/Services/AirlinesForm";
+import PaymentMethods from "./Pages/Services/PaymentMethods";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
       <Route path="/booking" element={<BookingForm />} />
       <Route path="/booking-confirmation" element={<BookingConfirmation />} />
       <Route path="/airlineform" element={<AirlinesForm />} />
-
+      <Route path="/paymentmethods" element={<PaymentMethods />} />
       <Route path="/productdetails/:id" element={<ProductsCard />} />
     </Routes>
   );

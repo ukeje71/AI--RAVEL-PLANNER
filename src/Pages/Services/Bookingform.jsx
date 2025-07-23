@@ -11,7 +11,7 @@ const BookingForm = () => {
     numberOfGuests: "",
     departureDate: "",
   });
-  const [showConfirmation, setShowConfirmation] = useState(false);
+  // const [showConfirmation, setShowConfirmation] = useState(false);
 
   // Check if all fields are filled
   const isFormComplete = Object.values(formData).every(
@@ -26,8 +26,9 @@ const BookingForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isFormComplete) {
-      setShowConfirmation(true);
+      // setShowConfirmation(true);
       console.log("Form submitted:", formData);
+      navigate("/paymentmethods")
     }
   };
 
@@ -123,9 +124,9 @@ const BookingForm = () => {
         </button>
       </form>
 
-      {showConfirmation && (
+      {/* {showConfirmation && (
         <BookingConfirmation onClose={() => setShowConfirmation(false)} />
-      )}
+      )} */}
     </div>
   );
 };
