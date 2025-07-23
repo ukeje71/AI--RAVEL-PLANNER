@@ -35,8 +35,7 @@ const PaymentMethods = () => {
 
   const handleContinue = () => {
     if (selected) {
-      // Navigate to next page or process payment
-      navigate("/checkout"); // Change this to your desired route
+      navigate("/addcard");
     }
   };
   return (
@@ -44,10 +43,7 @@ const PaymentMethods = () => {
       {/* Header */}
       <div className="px-4 pt-8">
         <div className="flex items-center gap-15 mx-auto">
-          <button 
-            className="mr-3 text-xl"
-            onClick={() => navigate(-1)}
-          >
+          <button className="mr-3 text-xl" onClick={() => navigate(-1)}>
             <ArrowLeft />
           </button>
           <h1 className="text-lg font-semibold">Payment Method</h1>
@@ -61,7 +57,7 @@ const PaymentMethods = () => {
           <p className="mb-4 text-sm font-medium text-gray-700">
             Add Payment Method
           </p>
-          
+
           {/* Payment Options */}
           <section className="space-y-4 mb-8">
             {paymentOptions.map((method) => (

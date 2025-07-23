@@ -22,13 +22,16 @@ const ProductsCard = () => {
     }
   }, [selectedProduct, navigate]);
 
-  const handleBookNow = () => {
-    if (selectedProduct?.category === "airline") {
-      navigate("/airlineform");
-    } else {
-      navigate("/booking");
-    }
-  };
+const handleBookNow = () => {
+  if (selectedProduct?.category === "airline") {
+    navigate("/airlineform");
+  } else if (selectedProduct?.category === "Tour") {
+    navigate("/tourform");
+  } else {
+    navigate("/booking");
+  }
+};
+
 
   if (!selectedProduct) return null;
 
