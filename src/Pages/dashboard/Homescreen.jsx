@@ -56,7 +56,7 @@ const Homescreen = () => {
           onClick={() => navigate("/apartment")}
           className="flex gap-4 items-center cursor-pointer mb-4"
         >
-          <h2 className="text-xl font-semibold">Available Apartments</h2>
+          <h2 className="text-xl">Available Apartments</h2>
           <ArrowRightIcon className="text-black" />
         </div>
 
@@ -82,7 +82,7 @@ const Homescreen = () => {
           onClick={() => navigate("/airline")}
           className="flex gap-4 items-center mb-4 cursor-pointer"
         >
-          <h2 className="text-xl font-semibold">Airlines</h2>
+          <h2 className="text-xl">Airlines</h2>
           <ArrowRightIcon className="text-black" />
         </div>
 
@@ -107,7 +107,7 @@ const Homescreen = () => {
           onClick={() => navigate("/tour")}
           className="flex gap-4 items-center mb-4 cursor-pointer"
         >
-          <h2 className="text-xl font-semibold">Places to Tour</h2>
+          <h2 className="text-xl">Places to Tour</h2>
           <ArrowRightIcon className="text-black" />
         </div>
 

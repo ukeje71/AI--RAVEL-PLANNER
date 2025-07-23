@@ -15,11 +15,20 @@ const ProductsCard = () => {
   const { selectedProduct, clearSelectedProduct } = useDetailsStore();
   const Icon1 = selectedProduct?.icon1 || KeyRound;
   const Icon2 = selectedProduct?.icon2 || BedDouble;
+  
   useEffect(() => {
     if (!selectedProduct) {
       navigate(-1);
     }
   }, [selectedProduct, navigate]);
+
+  const handleBookNow = () => {
+    if (selectedProduct?.category === "airline") {
+      navigate("/airlineform");
+    } else {
+      navigate("/booking");
+    }
+  };
 
   if (!selectedProduct) return null;
 
@@ -158,7 +167,7 @@ const ProductsCard = () => {
                 </p>
               </div>
               <button
-                onClick={() => navigate("/booking")}
+                onClick={handleBookNow}
                 className="bg-blue-600 text-white text-sm sm:text-base font-medium px-4 py-2 sm:px-6 sm:py-3 rounded-md hover:bg-blue-700 transition-colors"
               >
                 Book Now

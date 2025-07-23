@@ -1,5 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 const AirlinesForm = () => {
   const [formData, setFormData] = useState({
@@ -17,12 +18,17 @@ const AirlinesForm = () => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white p-4 flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-center relative mb-8">
-        <button className="absolute left-0 text-2xl"><ArrowLeft/></button>
+        <button
+          onClick={() => navigate(-1)}
+          className="absolute left-0 text-2xl"
+        >
+          <ArrowLeft />
+        </button>
         <h2 className="text-lg font-medium">Available Airlines</h2>
       </div>
 

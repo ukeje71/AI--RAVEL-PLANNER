@@ -13,6 +13,12 @@ import Emirate5 from "../assets/Images/Emirate5.jpg";
 import Emirate6 from "../assets/Images/Emirate6.jpg";
 import Tour1 from "../assets/Images/Conservation1.jpg";
 import Tour2 from "../assets/Images/Conservation2.jpg";
+import Tour3 from "../assets/Images/Conservation3.jpg";
+import Tour4 from "../assets/Images/Conservation4.jpg";
+import Tour5 from "../assets/Images/Conservation5.jpg";
+import Tour6 from "../assets/Images/Conservation6.jpg";
+import Tour7 from "../assets/Images/Conservation7.jpg";
+import Tour8 from "../assets/Images/Conservation8.jpg";
 import {
   Bed,
   BedDouble,
@@ -374,7 +380,7 @@ export const Products = [
     Medium3: "Logistics",
     Text3:
       "Air-conditioned transport from Lagos with lunch at a local restaurant included.",
-    image: Tour1,
+    image: Tour3,
     Price: 75,
     TimeFrame: "Full day Tour",
     category: "Tour",
@@ -395,7 +401,7 @@ export const Products = [
     Medium3: "Travel Package",
     Text3:
       "Includes return flights from Lagos to Bauchi, all transfers, full board accommodation and guided Tours.",
-    image: Tour2,
+    image: Tour4,
     Price: 600,
     TimeFrame: "4 days/3 nights",
     category: "Tour",
@@ -416,7 +422,7 @@ export const Products = [
     Medium3: "Location",
     Text3:
       "Located in Lekki Phase 1 with beautiful lagoon views and easy access to other attractions.",
-    image: Tour1,
+    image: Tour5,
     Price: 40,
     TimeFrame: "Daily from 10AM-6PM",
     category: "Tour",
@@ -437,7 +443,7 @@ export const Products = [
     Medium3: "Travel Details",
     Text3:
       "Roundtrip transport from Lagos with knowledgeable local guides and lunch included.",
-    image: Tour2,
+    image: Tour6,
     Price: 65,
     TimeFrame: "Day trip",
     category: "Tour",
@@ -458,7 +464,7 @@ export const Products = [
     Medium3: "Event Information",
     Text3:
       "Held annually in December featuring colorful parades, cultural displays and international performers.",
-    image: Tour1,
+    image: Tour7,
     Price: 800,
     TimeFrame: "5 days/4 nights",
     category: "Tour",
