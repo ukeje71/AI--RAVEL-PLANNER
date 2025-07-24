@@ -1,5 +1,5 @@
 import { MapPin, Star } from "lucide-react";
-import { useNavigate } from "react-router"; 
+import { useNavigate } from "react-router";
 import useDetailsStore from "../Store/details";
 
 const Card = ({
@@ -12,7 +12,7 @@ const Card = ({
   TimeFrame,
   className = "",
   imageContainerClassName = "",
-  imageClassName = ""
+  imageClassName = "",
 }) => {
   const navigate = useNavigate();
   const { setSelectedProduct } = useDetailsStore();
@@ -20,7 +20,7 @@ const Card = ({
   const handleImageClick = () => {
     console.log("Attempting to select product ID:", id); // Debug
     setSelectedProduct(id);
-    navigate(`/productdetails/${id}`); 
+    navigate(`/productdetails/${id}`);
   };
 
   return (

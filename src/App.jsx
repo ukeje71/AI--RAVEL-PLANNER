@@ -11,7 +11,6 @@ import ProductsCard from "./Pages/Services/ProductsCard";
 import TourPage from "./Pages/Services/TourPage";
 import Airline from "./Pages/Services/AirlinePage";
 import BookingForm from "./Pages/Services/Bookingform";
-import BookingConfirmation from "./components/UI/BookingConfirmation";
 import AirlinesForm from "./Pages/Services/AirlinesForm";
 import PaymentMethods from "./Pages/Services/PaymentMethods";
 import AddCard from "./Pages/Services/AddCard";
@@ -19,10 +18,14 @@ import TourForm from "./Pages/Services/TourForm";
 import Saved from "./Pages/dashboard/Saved";
 import BottomNavigation from "./components/UI/BottomNavigation";
 import AccountMenu from "./Pages/dashboard/AccountMenu";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const location = useLocation();
-  const showBottomNav = location.pathname === "/home" || location.pathname === "/saved" || location.pathname === "/accountmenu";
+  const showBottomNav =
+    location.pathname === "/home" ||
+    location.pathname === "/saved" ||
+    location.pathname === "/accountmenu";
 
   return (
     <>
@@ -38,7 +41,6 @@ function App() {
         <Route path="/tour" element={<TourPage />} />
         <Route path="/airline" element={<Airline />} />
         <Route path="/booking" element={<BookingForm />} />
-        <Route path="/booking-confirmation" element={<BookingConfirmation />} />
         <Route path="/airlineform" element={<AirlinesForm />} />
         <Route path="/paymentmethods" element={<PaymentMethods />} />
         <Route path="/addcard" element={<AddCard />} />
@@ -47,6 +49,7 @@ function App() {
         <Route path="/tourform" element={<TourForm />} />
         <Route path="/productdetails/:id" element={<ProductsCard />} />
       </Routes>
+      <ToastContainer position="bottom-center" autoClose={3000} hideProgressBar closeOnClick draggable pauseOnHover theme="light" />
       {showBottomNav && <BottomNavigation />}
     </>
   );

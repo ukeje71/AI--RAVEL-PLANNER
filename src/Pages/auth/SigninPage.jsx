@@ -6,11 +6,14 @@ import {
   Eye,
   EyeOff,
   ArrowRight,
-  Github,
-
 } from "lucide-react";
+// Firebase imports
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { app } from "../../components/Firebase";
+
 // Image import 
-import Gmail from "../../assets/Images/Gmail.png"
+import Gmail from "../../assets/Images/Gmail.png";
+
 const SigninPage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -19,21 +22,67 @@ const SigninPage = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Initialize Firebase Auth
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    // Add your login logic here
-    console.log("Login data:", formData);
-    setTimeout(() => {
-      setIsLoading(false);
+    setError(null);
+    
+    try {
+      await signInWithEmailAndPassword(auth, formData.email, formData.password);
+      // If successful, the onAuthStateChanged listener (which you should set up in your app)
+      // will handle the navigation, or you can navigate here:
       navigate("/home");
-    }, 1500);
+    } catch (err) {
+      setError(getErrorMessage(err.code));
+      setIsLoading(false);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      await signInWithPopup(auth, googleProvider);
+      // Navigation will be handled by onAuthStateChanged or you can navigate here:
+      navigate("/home");
+    } catch (err) {
+      setError(getErrorMessage(err.code));
+      setIsLoading(false);
+    }
+  };
+
+  // Helper function to convert Firebase error codes to user-friendly messages
+  const getErrorMessage = (code) => {
+    switch (code) {
+      case "auth/invalid-email":
+        return "Invalid email address.";
+      case "auth/user-disabled":
+        return "This account has been disabled.";
+      case "auth/user-not-found":
+        return "No account found with this email.";
+      case "auth/wrong-password":
+        return "Incorrect password.";
+      case "auth/too-many-requests":
+        return "Too many attempts. Try again later.";
+      case "auth/popup-closed-by-user":
+        return "Google sign in was canceled.";
+      case "auth/account-exists-with-different-credential":
+        return "An account already exists with this email but different sign-in method.";
+      default:
+        return "Sign in failed. Please try again.";
+    }
   };
 
   return (
@@ -49,6 +98,12 @@ const SigninPage = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          {error && (
+            <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md text-sm">
+              {error}
+            </div>
+          )}
+          
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Email Field */}
             <div>
@@ -158,9 +213,15 @@ const SigninPage = () => {
             </div>
 
             {/* Social Login Options */}
-            <div className="flex flex-row items-center justify-center gap-3">
-              <img src={Gmail} alt="gmailicon" className="h-10 w-10"/>
-              <p>Gmail</p>
+            <div className="mt-6">
+              <button
+                onClick={handleGoogleSignIn}
+                disabled={isLoading}
+                className="w-full flex justify-center items-center gap-2 py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB] transition-colors"
+              >
+                <img src={Gmail} alt="Google" className="h-5 w-5" />
+                <span>Continue with Google</span>
+              </button>
             </div>
           </div>
 
@@ -170,7 +231,7 @@ const SigninPage = () => {
               Don't have an account?
               <button
                 onClick={() => navigate("/signup")}
-                className="font-medium text-[#2563EB] hover:text-blue-700 hover:underline"
+                className="font-medium text-[#2563EB] hover:text-blue-700 hover:underline ml-1"
               >
                 Sign up
               </button>

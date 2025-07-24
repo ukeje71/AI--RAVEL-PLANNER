@@ -1,6 +1,10 @@
 import { Eye, EyeOff, Lock } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+// Firebase imports
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { app, db } from "../../components/Firebase"; 
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -17,6 +21,11 @@ const SignupPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [passwordError, setPasswordError] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Initialize Firebase Auth
+  const auth = getAuth(app);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,8 +37,10 @@ const SignupPage = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setPasswordError("");
 
     // Validate passwords match
     if (formData.password !== formData.confirmPassword) {
@@ -42,9 +53,61 @@ const SignupPage = () => {
       return;
     }
 
-    // Add your signup logic here
-    console.log("Form submitted:", formData);
-    navigate("/home");
+    if (!agreeToTerms) {
+      setError("You must agree to the terms and conditions");
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      // Create user with email and password
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
+
+      // User successfully created, now save additional info to Firestore
+      const user = userCredential.user;
+      
+      // Prepare user data for Firestore
+      const userData = {
+        uid: user.uid,
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        country: formData.country,
+        travelBudget: formData.travelBudget,
+        createdAt: new Date().toISOString(),
+        lastLogin: new Date().toISOString(),
+      };
+
+      // Add user data to Firestore using the imported db
+      await setDoc(doc(db, "users", user.uid), userData);
+
+      // Navigate to home page after successful signup
+      navigate("/home");
+    } catch (err) {
+      setError(getErrorMessage(err.code));
+      setIsLoading(false);
+    }
+  };
+
+  // Helper function to convert Firebase error codes to user-friendly messages
+  const getErrorMessage = (code) => {
+    switch (code) {
+      case "auth/email-already-in-use":
+        return "This email is already registered. Please sign in instead.";
+      case "auth/invalid-email":
+        return "Invalid email address.";
+      case "auth/weak-password":
+        return "Password should be at least 6 characters.";
+      case "auth/operation-not-allowed":
+        return "Email/password accounts are not enabled.";
+      default:
+        return "Sign up failed. Please try again.";
+    }
   };
 
   return (
@@ -60,6 +123,12 @@ const SignupPage = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          {error && (
+            <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md text-sm">
+              {error}
+            </div>
+          )}
+
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Full Name */}
             <div>
@@ -257,14 +326,14 @@ const SignupPage = () => {
             <div>
               <button
                 type="submit"
-                disabled={!agreeToTerms || passwordError}
+                disabled={!agreeToTerms || passwordError || isLoading}
                 className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
-                  agreeToTerms && !passwordError
+                  agreeToTerms && !passwordError && !isLoading
                     ? "bg-[#2563EB] hover:bg-blue-700"
                     : "bg-gray-400 cursor-not-allowed"
                 } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB] transition-colors`}
               >
-                Sign Up
+                {isLoading ? "Creating account..." : "Sign Up"}
               </button>
             </div>
 
