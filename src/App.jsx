@@ -19,6 +19,7 @@ import Saved from "./Pages/dashboard/Saved";
 import BottomNavigation from "./components/UI/BottomNavigation";
 import AccountMenu from "./Pages/dashboard/AccountMenu";
 import { ToastContainer } from "react-toastify";
+import Triplist from "./components/Saved/Triplist";
 
 function App() {
   const location = useLocation();
@@ -47,6 +48,8 @@ function App() {
         <Route path="/saved" element={<Saved />} />
         <Route path="/accountmenu" element={<AccountMenu />} />
         <Route path="/tourform" element={<TourForm />} />
+        <Route path="/triplist" element={<Triplist/>} />
+
         <Route path="/productdetails/:id" element={<ProductsCard />} />
       </Routes>
       <ToastContainer position="bottom-center" autoClose={3000} hideProgressBar closeOnClick draggable pauseOnHover theme="light" />

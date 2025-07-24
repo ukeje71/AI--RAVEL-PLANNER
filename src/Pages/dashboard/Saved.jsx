@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const Saved = () => {
   const icons = [
-    { name: Briefcase, text: "Trips", route: "/home" },
+    { name: Briefcase, text: "Trips", route: "/triplist" },
     { name: Camera, text: "Tours", route: "/tour" },
     { name: Bed, text: "Apartment", route: "/apartment" },
     { name: Plane, text: "Flights", route: "/airline" },
