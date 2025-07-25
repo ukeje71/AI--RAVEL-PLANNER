@@ -20,6 +20,9 @@ import BottomNavigation from "./components/UI/BottomNavigation";
 import AccountMenu from "./Pages/dashboard/AccountMenu";
 import { ToastContainer } from "react-toastify";
 import Triplist from "./components/Saved/Triplist";
+import Tourlist from "./components/Saved/Tourlist";
+import Apartmentslist from "./components/Saved/Apartmentslist";
+import Airlinelist from "./components/Saved/Airlinelist";
 
 function App() {
   const location = useLocation();
@@ -49,7 +52,9 @@ function App() {
         <Route path="/accountmenu" element={<AccountMenu />} />
         <Route path="/tourform" element={<TourForm />} />
         <Route path="/triplist" element={<Triplist/>} />
-
+        <Route path="/tourlist" element={<Tourlist/>} />
+        <Route path="/apartmentlist" element={<Apartmentslist/>} />
+        <Route path="/airlinelist" element={<Airlinelist/>} />
         <Route path="/productdetails/:id" element={<ProductsCard />} />
       </Routes>
       <ToastContainer position="bottom-center" autoClose={3000} hideProgressBar closeOnClick draggable pauseOnHover theme="light" />
