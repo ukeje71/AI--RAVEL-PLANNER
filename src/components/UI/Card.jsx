@@ -35,21 +35,21 @@ const Card = ({
           alt={title}
           className={`w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform ${imageClassName}`}
         />
-        <p className="absolute bottom-2 left-2 bg-[#2563EBCC] bg-opacity-70 text-white font-bold px-2 py-1 rounded-md">
-          {price}
+        <p className="absolute bottom-2 left-2 bg-[#2563EBCC] bg-opacity-70 text-white px-2 py-1 rounded-md">
+         {price}
         </p>
       </div>
 
       {/* Details */}
       <div className="p-3">
-        <div className="flex items-center justify-between font-bold">
+        <div className="flex items-center justify-between">
           <div className="flex items-center">
             <MapPin className="w-4 h-4 text-gray-500 mr-1" />
             <span className="font-medium text-xs sm:text-sm">{location}</span>
           </div>
           <div className="flex items-center">
             <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-[#C27C1A]" />
-            <span className="text-xs sm:text-sm ml-1">{rating}</span>
+            <span className="text-xs sm:text-sm ml-1 text-[5px]">{rating}</span>
           </div>
         </div>
         <div className="flex flex-col mt-2">

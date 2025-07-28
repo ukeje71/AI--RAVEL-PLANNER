@@ -44,7 +44,7 @@ export const Products = [
     Text3:
       "Located in the heart of Victoria Island, close to restaurants, shops, and the beach.",
     image: Palour1,
-    Price: 200,
+    Price: "$"+200  +" per night",
     TimeFrame: "For 1 night - 18 June-20",
     category: "apartment",
     location: "Victoria Island",
@@ -65,7 +65,7 @@ export const Products = [
     Text3:
       "Located in central Wuse 2, close to malls, embassies, and top restaurants.",
     image: Palour2,
-    Price: 200,
+    Price: "$"+200  +" per night",
     TimeFrame: "For 1 night - 18 June-20",
     category: "apartment",
     location: "Wuse 2, Abuja",
@@ -363,7 +363,7 @@ export const Products = [
     Price: 450,
     TimeFrame: "3 days/2 nights package",
     category: "Tour",
-    location: "Obudu, Ranch",
+    location: "Obudu",
     rating: 4.9,
     icon1: MapPin,
     icon2: User,
