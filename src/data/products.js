@@ -23,6 +23,7 @@ import {
   Bed,
   BedDouble,
   KeyRound,
+  Lightbulb,
   LucideBookText,
   LucideStar,
   MapPin,
@@ -346,6 +347,7 @@ export const Products = [
     rating: 4.7,
     icon1: MapPin,
     icon2: User,
+    icon3:Lightbulb,
   },
   {
     id: 16,
@@ -367,6 +369,7 @@ export const Products = [
     rating: 4.9,
     icon1: MapPin,
     icon2: User,
+    icon3:Lightbulb,
   },
   {
     id: 17,
@@ -388,6 +391,7 @@ export const Products = [
     rating: 4.5,
     icon1: MapPin,
     icon2: User,
+    icon3:Lightbulb,
   },
   {
     id: 18,
@@ -409,6 +413,7 @@ export const Products = [
     rating: 4.8,
     icon1: MapPin,
     icon2: User,
+    icon3:Lightbulb,
   },
   {
     id: 19,
@@ -430,6 +435,7 @@ export const Products = [
     rating: 4.6,
     icon1: MapPin,
     icon2: User,
+    icon3:Lightbulb,
   },
   {
     id: 20,
@@ -451,6 +457,7 @@ export const Products = [
     rating: 4.4,
     icon1: MapPin,
     icon2: User,
+    icon3:Lightbulb,
   },
   {
     id: 21,
@@ -472,5 +479,6 @@ export const Products = [
     rating: 4.9,
     icon1: MapPin,
     icon2: User,
+    icon3:Lightbulb,
   },
 ];

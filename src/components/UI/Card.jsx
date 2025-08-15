@@ -53,7 +53,7 @@ const Card = ({
           </div>
         </div>
         <div className="flex flex-col mt-2">
-          <p className="font-bold line-clamp-1">{title}</p>
+          <p className=" line-clamp-1">{title}</p>
           <p className="text-sm text-gray-500">{TimeFrame}</p>
         </div>
       </div>

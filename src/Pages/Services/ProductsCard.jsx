@@ -50,7 +50,7 @@ const handleBookNow = () => {
         <button
           onClick={() => {
             clearSelectedProduct();
-            navigate(-1);
+            navigate("/home");
           }}
           className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/80 rounded-full p-2 shadow-md hover:bg-white transition-all"
         >

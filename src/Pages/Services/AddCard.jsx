@@ -39,7 +39,7 @@ const AddCard = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-white px-4 py-8">
       <div className="w-full max-w-md">
         {/* Header */}
-        <div className=" absolute top-0 flex items-center mt-6">
+        <div className=" absolute gap-15 top-0 flex items-center mt-6">
           <button className="mr-3 text-xl" onClick={() => navigate(-1)}>
             <ArrowLeft />
           </button>

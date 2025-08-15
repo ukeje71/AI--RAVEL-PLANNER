@@ -72,7 +72,7 @@ const PaymentMethods = () => {
                   <img
                     src={method.icon}
                     alt={method.label}
-                    className="w-16 h-16 object-contain"
+                    className="w-15 h-10 object-contain"
                   />
                   <span className="text-sm font-medium text-gray-800">
                     {method.label}
