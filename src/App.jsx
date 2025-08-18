@@ -23,11 +23,13 @@ import Triplist from "./components/Saved/Triplist";
 import Tourlist from "./components/Saved/Tourlist";
 import Apartmentslist from "./components/Saved/Apartmentslist";
 import Airlinelist from "./components/Saved/Airlinelist";
+import Aibot from "./Pages/dashboard/Aibot";
 
 function App() {
   const location = useLocation();
   const showBottomNav =
     location.pathname === "/home" ||
+    location.pathname === "/chat" ||
     location.pathname === "/saved" ||
     location.pathname === "/accountmenu";
 
@@ -49,6 +51,7 @@ function App() {
         <Route path="/paymentmethods" element={<PaymentMethods />} />
         <Route path="/addcard" element={<AddCard />} />
         <Route path="/saved" element={<Saved />} />
+        <Route path="/chat" element={<Aibot />} />
         <Route path="/accountmenu" element={<AccountMenu />} />
         <Route path="/tourform" element={<TourForm />} />
         <Route path="/triplist" element={<Triplist/>} />

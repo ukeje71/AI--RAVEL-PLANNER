@@ -27,7 +27,10 @@ const BottomNavigation = () => {
 
         {/* Chat */}
         <button
-          onClick={() => setActiveTab("chat")}
+          onClick={() => {
+            setActiveTab("chat");
+            navigate("/chat");
+          }}
           className={`flex flex-col items-center justify-center w-full h-full ${
             activeTab === "chat" ? "text-blue-500" : "text-gray-500"
           }`}

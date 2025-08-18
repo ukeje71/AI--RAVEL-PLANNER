@@ -49,8 +49,7 @@ const handleBookNow = () => {
         {/* Back Button - Responsive positioning */}
         <button
           onClick={() => {
-            clearSelectedProduct();
-            navigate("/home");
+            navigate(-1);
           }}
           className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/80 rounded-full p-2 shadow-md hover:bg-white transition-all"
         >
