@@ -62,7 +62,7 @@ button {
   align-items: center;
   gap: 20px;
 }
-.chat-.container .message .message-text {
+.chat .container .message .message-text {
   padding: 12px 16px;
   max-width: 75%;
   word-wrap: break-word;
@@ -70,7 +70,7 @@ button {
   white-space: pre-line;
 }
 
-.chat-.container .bot-message .message-text {
+.chat .container .bot-message .message-text {
   background-color: #ffcdcf;
   border-radius: 13px 13px 13px 13px;
 }
@@ -94,27 +94,27 @@ button {
   display: block;
 }
 /* Ensure smooth scrolling behavior */
-.chat-.container {
+.chat .container {
   overflow-y: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
 }
 
 /* Optional: Custom scrollbar styling */
-.chat-.container::-webkit-scrollbar {
+.chat .container::-webkit-scrollbar {
   width: 6px;
 }
 
-.chat-.container::-webkit-scrollbar-track {
+.chat .container::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
 }
 
-.chat-.container::-webkit-scrollbar-thumb {
+.chat .container::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 10px;
 }
 
-.chat-.container::-webkit-scrollbar-thumb:hover {
+.chat .container::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
