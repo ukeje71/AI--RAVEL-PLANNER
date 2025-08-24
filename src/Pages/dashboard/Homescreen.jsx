@@ -70,7 +70,7 @@ const Homescreen = () => {
               price={apartment.Price}
               rating={apartment.rating}
               className="border border-gray-200"
-              imageContainerClassName="h-40"
+              imageContainerClassName="h-26"
             />
           ))}
         </div>
@@ -95,7 +95,7 @@ const Homescreen = () => {
               location={airline.location}
               rating={airline.rating}
               className="border border-gray-200"
-              imageContainerClassName="h-40"
+              imageContainerClassName="h-26"
             />
           ))}
         </div>
@@ -120,7 +120,7 @@ const Homescreen = () => {
               location={place.location}
               rating={place.rating}
               className="border border-gray-200"
-              imageContainerClassName="h-40"
+              imageContainerClassName="h-26"
             />
           ))}
         </div>

@@ -26,7 +26,7 @@ const ChatForm = ({ setChatHistory }) => {
           method: "POST",
           headers: {
             Authorization: `Bearer ${import.meta.env.VITE_APIKEY}`,
-            "HTTP-Referer": "https://deep-vein.vercel.app/",
+            "HTTP-Referer": "https://ai-travel-planner-psi-two.vercel.app/",
             "X-Title": "Deep Vein",
             "Content-Type": "application/json",
           },

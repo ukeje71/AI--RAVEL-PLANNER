@@ -12,25 +12,30 @@ import useDetailsStore from "../../components/Store/details";
 
 const ProductsCard = () => {
   const navigate = useNavigate();
-  const { selectedProduct, clearSelectedProduct } = useDetailsStore();
+  const { selectedProduct } = useDetailsStore();
   const Icon1 = selectedProduct?.icon1 || KeyRound;
   const Icon2 = selectedProduct?.icon2 || BedDouble;
-  
+  const Icon3 = selectedProduct?.icon3 || BedDouble;
+  const Icon4 = selectedProduct?.icon4 || "nothing";
+  const Icon5 = selectedProduct?.icon5 || "nothing";
+
+
+
   useEffect(() => {
     if (!selectedProduct) {
       navigate(-1);
     }
   }, [selectedProduct, navigate]);
 
-const handleBookNow = () => {
-  if (selectedProduct?.category === "airline") {
-    navigate("/airlineform");
-  } else if (selectedProduct?.category === "Tour") {
-    navigate("/tourform");
-  } else {
-    navigate("/booking");
-  }
-};
+  const handleBookNow = () => {
+    if (selectedProduct?.category === "airline") {
+      navigate("/airlineform");
+    } else if (selectedProduct?.category === "Tour") {
+      navigate("/tourform");
+    } else {
+      navigate("/booking");
+    }
+  };
 
 
   if (!selectedProduct) return null;
@@ -141,19 +146,53 @@ const handleBookNow = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin
+                <Icon3
                   size={18}
                   className="text-[#1e1e1e] mt-0.5 flex-none sm:w-5 sm:h-5"
                 />
                 <div className="flex-1">
                   <p className="font-medium text-sm sm:text-base">
-                    Location Overview
+                    {selectedProduct.Medium3}
                   </p>
                   <p className="text-xs text-gray-500 sm:text-sm">
-                    {selectedProduct.location || "..."}
+                    {selectedProduct.Text3 || "..."}
                   </p>
                 </div>
               </div>
+
+              <div className="flex items-start gap-3">
+                <Icon4
+                  size={18}
+                  className="text-[#1e1e1e] mt-0.5 flex-none sm:w-5 sm:h-5"
+                />
+                <div className="flex-1">
+                  <p className="font-medium text-sm sm:text-base">
+                    {selectedProduct.medium4}
+                  </p>
+                  <p className="text-xs text-gray-500 sm:text-sm">
+                    {selectedProduct.Text4 || "..."}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <Icon5
+                  size={18}
+                  className="text-[#1e1e1e] mt-0.5 flex-none sm:w-5 sm:h-5"
+                />
+                <div className="flex-1">
+                  <p className="font-medium text-sm sm:text-base">
+                    {selectedProduct.medium5}
+                  </p>
+                  <p className="text-xs text-gray-500 sm:text-sm">
+                    {selectedProduct.Text5 || "..."}
+                  </p>
+                </div>
+              </div>
+
+              {/* Write up */}
+              <h3 className="font-bold">{selectedProduct.Remarks}</h3>
+              <p>{selectedProduct.Followup}</p>
             </div>
           </div>
 
