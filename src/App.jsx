@@ -5,7 +5,7 @@ import SignupPage from "./Pages/auth/SignupPage";
 import SigninPage from "./Pages/auth/SigninPage";
 import ForgotPasswordPage from "./Pages/auth/ForgotPassPage";
 import CheckemailPage from "./Pages/auth/CheckemailPage";
-import Homescreen from "./Pages/dashboard/Homescreen";
+import Homescreen from "../src/Pages/dashboard/Homescreen"
 import Apartmentpage from "./Pages/Services/Apartmentpage";
 import ProductsCard from "./Pages/Services/ProductsCard";
 import TourPage from "./Pages/Services/TourPage";
@@ -24,6 +24,9 @@ import Tourlist from "./components/Saved/Tourlist";
 import Apartmentslist from "./components/Saved/Apartmentslist";
 import Airlinelist from "./components/Saved/Airlinelist";
 import Aibot from "./Pages/dashboard/Aibot";
+import Personal from "./components/Accounts/Personal";
+import Settings from "./components/Accounts/Settings";
+import Themes from "./components/Accounts/Themes";
 
 function App() {
   const location = useLocation();
@@ -59,6 +62,12 @@ function App() {
         <Route path="/apartmentlist" element={<Apartmentslist/>} />
         <Route path="/airlinelist" element={<Airlinelist/>} />
         <Route path="/productdetails/:id" element={<ProductsCard />} />
+        <Route path="/personal" element={< Personal/>} />
+        <Route path="/settings" element={< Settings/>} />
+        <Route path="/themes" element={< Themes/>} />
+
+
+
       </Routes>
       <ToastContainer position="bottom-center" autoClose={3000} hideProgressBar closeOnClick draggable pauseOnHover theme="light" />
       {showBottomNav && <BottomNavigation />}
