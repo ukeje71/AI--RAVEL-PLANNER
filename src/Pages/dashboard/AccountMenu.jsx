@@ -33,23 +33,34 @@ const AccountMenu = () => {
           </button>
         </Link>
 
+        <Link to={"/currency"}>
 
-        <button className="w-full bg-white p-4 rounded-lg flex items-center text-left">
-          <DollarSign className="w-6 h-6 text-blue-500 mr-3" />
-          Payment Currency
-        </button>
-        <button className="w-full bg-white p-4 rounded-lg flex items-center text-left">
-          <FileText className="w-6 h-6 text-blue-500 mr-3" />
-          Travel Documents
-        </button>
-        <button className="w-full bg-white p-4 rounded-lg flex items-center text-left">
-          <Headphones className="w-6 h-6 text-blue-500 mr-3" />
-          Help & Support
-        </button>
-        <button className="w-full bg-white p-4 rounded-lg flex items-center text-left mt-6">
-          <LogOut className="w-6 h-6 text-blue-500 mr-3" />
-          Close Account
-        </button>
+          <button className="w-full bg-white p-4 rounded-lg flex items-center text-left">
+            <DollarSign className="w-6 h-6 text-blue-500 mr-3" />
+            Payment Currency
+          </button>
+        </Link>
+        <Link to={"/documents"}>
+
+          <button className="w-full bg-white p-4 rounded-lg flex items-center text-left">
+            <FileText className="w-6 h-6 text-blue-500 mr-3" />
+            Travel Documents
+          </button>
+        </Link>
+        <Link to={"/help"}>
+
+          <button className="w-full bg-white p-4 rounded-lg flex items-center text-left">
+            <Headphones className="w-6 h-6 text-blue-500 mr-3" />
+            Help & Support
+          </button>
+        </Link>
+        <Link to={"/logout"}>
+
+          <button className="w-full bg-white p-4 rounded-lg flex items-center text-left mt-6">
+            <LogOut className="w-6 h-6 text-blue-500 mr-3" />
+            Close Account
+          </button>
+        </Link>
       </div>
     </div>
   );

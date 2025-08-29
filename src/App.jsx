@@ -27,6 +27,8 @@ import Aibot from "./Pages/dashboard/Aibot";
 import Personal from "./components/Accounts/Personal";
 import Settings from "./components/Accounts/Settings";
 import Themes from "./components/Accounts/Themes";
+import Currency from "./components/Accounts/Currency";
+import Documents from "./components/Accounts/Documents";
 
 function App() {
   const location = useLocation();
@@ -65,6 +67,9 @@ function App() {
         <Route path="/personal" element={< Personal/>} />
         <Route path="/settings" element={< Settings/>} />
         <Route path="/themes" element={< Themes/>} />
+        <Route path="/currency" element={< Currency/>} />
+        <Route path="/documents" element={< Documents/>} />
+
 
 
 
