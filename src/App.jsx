@@ -29,6 +29,7 @@ import Settings from "./components/Accounts/Settings";
 import Themes from "./components/Accounts/Themes";
 import Currency from "./components/Accounts/Currency";
 import Documents from "./components/Accounts/Documents";
+import Helpcenter from "./components/Accounts/Helpcenter";
 
 function App() {
   const location = useLocation();
@@ -69,6 +70,7 @@ function App() {
         <Route path="/themes" element={< Themes/>} />
         <Route path="/currency" element={< Currency/>} />
         <Route path="/documents" element={< Documents/>} />
+        <Route path="/help" element={< Helpcenter/>} />
 
 
 

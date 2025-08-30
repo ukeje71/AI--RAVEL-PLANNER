@@ -54,13 +54,11 @@ const AccountMenu = () => {
             Help & Support
           </button>
         </Link>
-        <Link to={"/logout"}>
 
-          <button className="w-full bg-white p-4 rounded-lg flex items-center text-left mt-6">
+          <button onClick={() => navigate("/onboard")} className="w-full bg-white p-4 rounded-lg flex items-center text-left mt-6">
             <LogOut className="w-6 h-6 text-blue-500 mr-3" />
             Close Account
           </button>
-        </Link>
       </div>
     </div>
   );
