@@ -73,8 +73,6 @@ function App() {
         <Route path="/help" element={< Helpcenter/>} />
 
 
-
-
       </Routes>
       <ToastContainer position="bottom-center" autoClose={3000} hideProgressBar closeOnClick draggable pauseOnHover theme="light" />
       {showBottomNav && <BottomNavigation />}
